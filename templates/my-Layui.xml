@@ -1,0 +1,236 @@
+<templateSet group="my-Layui">
+  <template name="lualert" value="// 1 正确, 2 错误(X), 3 询问，4 锁定, 5 不开心, 6 开心(笑脸) 7 感叹号&#10;layui.use('layer',function(){&#10;    layui.layer.alert('$text$',{icon:$icon$},function(index){&#10;        layer.close(index);&#10;    });&#10;});" description="弹窗" toReformat="false" toShortenFQNames="true">
+    <variable name="text" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="icon" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="lubtnicon-group" value="&lt;a href=&quot;javascript:;&quot; title=&quot;查看&quot; class=&quot;layui-btn layui-btn-sm layui-btn-normal&quot;&gt;&lt;i class=&quot;layui-icon&quot;&gt;&amp;#xe63c;&lt;/i&gt; 查看&lt;/a&gt;&#10;&lt;a href=&quot;javascript:;&quot; title=&quot;添加&quot; class=&quot;layui-btn layui-btn-sm&quot;&gt;&lt;i class=&quot;layui-icon&quot;&gt;&amp;#xe608;&lt;/i&gt; 添加&lt;/a&gt;&#10;&lt;a href=&quot;javascript:;&quot; title=&quot;编辑&quot; class=&quot;layui-btn layui-btn-sm layui-btn-warm&quot;&gt;&lt;i class=&quot;layui-icon&quot;&gt;&amp;#xe642;&lt;/i&gt; 编辑&lt;/a&gt;&#10;&lt;a href=&quot;javascript:;&quot; title=&quot;删除&quot; class=&quot;layui-btn layui-btn-sm layui-btn-danger&quot;&gt;&lt;i class=&quot;layui-icon&quot;&gt;&amp;#xe640;&lt;/i&gt; 删除&lt;/a&gt;" description="按钮组:查看/编辑/删除" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="lucity-html" value="&lt;div class=&quot;layui-form-item&quot;&gt;&#10;    &lt;label class=&quot;layui-form-label&quot;&gt;城市&lt;/label&gt;&#10;    &lt;div class=&quot;layui-input-inline&quot;&gt;&#10;        &lt;select name=&quot;province&quot; id=&quot;province&quot; lay-filter=&quot;province&quot;&gt;&lt;/select&gt;&#10;    &lt;/div&gt;&#10;    &lt;div class=&quot;layui-input-inline&quot;&gt;&#10;        &lt;select name=&quot;city&quot; id=&quot;city&quot; lay-filter=&quot;city&quot;&gt;&lt;/select&gt;&#10;    &lt;/div&gt;&#10;&lt;/div&gt;" description="市级联动 HTML" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="lucity-js" value="form.on('select(province)', function(data){&#10;    $.getJSON(&quot;/api/getCity?pid=&quot;+data.value, function(data){&#10;        var optionstring = &quot;&quot;;&#10;        $.each(data.data, function(i,item){&#10;            optionstring += &quot;&lt;option value=\&quot;&quot; + item.code + &quot;\&quot; &gt;&quot; + item.name + &quot;&lt;/option&gt;&quot;;&#10;        });&#10;        $(&quot;#city&quot;).html('&lt;option value=&quot;&quot;&gt;&lt;/option&gt;' + optionstring);&#10;        form.render('select'); //这个很重要&#10;    });&#10;});" description="市级联动 JS" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="luconfirm" value="// 1 正确, 2 错误(X), 3 询问，4 锁定, 5 不开心, 6 开心(笑脸) 7 感叹号&#10;layer.confirm('is not?', {icon: 3, title:'提示'}, function(index){&#10;  //do something&#10;  &#10;  layer.close(index);&#10;});" description="询问" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="ludanger" value="function del(obj, id) {&#10;        var num = parseInt(Math.random() * 100);&#10;        danger_prompt({&#10;            text: '$text$!!&lt;br/&gt;如果你仍然确定删除，请输入:' + num&#10;        }, function (value, index, elem) {&#10;            if (num === parseInt(value)) {&#10;                $.post(&quot;&quot;,_.assign({_csrf: $('#_csrf').val()}),function(result){&#10;                     console.log('success', result);&#10;                     return;&#10;                     layer.close(index);&#10;                     var index = parent.layer.getFrameIndex(window.name);&#10;                     parent.layer.close(index);&#10;                     parent.location.reload();&#10;                 },'json');&#10;            } else {&#10;                // 1 正确, 2 错误(X), 3 询问，4 锁定, 5 不开心, 6 开心(笑脸) 7 感叹号&#10;                layer.msg('填写错误,删除失败', {icon: 2, time: 1000});&#10;            }&#10;&#10;        });&#10;    }" description="删除输入确认框" toReformat="false" toShortenFQNames="true">
+    <variable name="text" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="ludate" value="// &lt;input type=&quot;text&quot; class=&quot;layui-input&quot; id=&quot;start&quot;&gt;&#10;layui.use(['laydate'], function(){&#10;  var laydate = layui.laydate;&#10;  &#10;  //执行一个laydate实例&#10;  laydate.render({&#10;    elem: '#start',&#10;    type: 'date', // year, month, date, time, datetime&#10;    value: '', // 初始值 '2018-08-18', new Date(1534766888000)&#10;    done: function (value) {&#10;        &#10;    }&#10;  });&#10;});" description="日期事件" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="ludelete" value="// onclick=&quot;javascript:del(this)&quot;&#10;function del(obj) {&#10;    layer.confirm('你确定要删除此吗？此操作无法恢复', {title: '警告:删除'}, function (index) {&#10;         $.post(&quot;url&quot;,{&#10;             _csrf: $('#_csrf').val()&#10;         },function(result){&#10;             $(obj).parents('tr').remove();&#10;             layer.msg('已删除!', {icon: 1, time: 1000});&#10;             // 移除行&#10;            // $(obj).parents(&quot;tr&quot;).remove();&#10;            // layer.msg('已删除!', {icon: 1, time: 1000});&#10;            // 刷新页面&#10;            // var index = parent.layer.getFrameIndex(window.name);&#10;            // parent.layer.close(index);&#10;            // parent.location.reload();&#10;         },'text');&#10;    });&#10;}" description="删除 del 函数" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="luhelpblock" value="&lt;div class=&quot;layui-form-mid layui-word-aux&quot;&gt;$text$&lt;/div&gt;" description="提示文字" toReformat="false" toShortenFQNames="true">
+    <variable name="text" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="luinput" value="&lt;div class=&quot;layui-form-item&quot;&gt;&#10;    &lt;label for=&quot;$name$&quot; class=&quot;layui-form-label&quot;&gt;&#10;        &lt;?php echo $model-&gt;getAttributeLabel('$name$') ?&gt;&#10;    &lt;/label&gt;&#10;    &lt;div class=&quot;layui-input-inline&quot;&gt;&#10;        &lt;input type=&quot;text&quot; name=&quot;$name$&quot; id=&quot;$name$&quot;&#10;               placeholder=&quot;$placeholder$&quot;&#10;               value=&quot;&lt;?php echo $model-&gt;$name$ ?&gt;&quot;&#10;               autocomplete=&quot;off&quot; class=&quot;layui-input&quot;&gt;&#10;    &lt;/div&gt;&#10;&lt;/div&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="placeholder" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="luinput-required" value="&lt;div class=&quot;layui-form-item&quot;&gt;&#10;    &lt;label for=&quot;$name$&quot; class=&quot;layui-form-label&quot;&gt;&#10;        &lt;span class=&quot;x-red&quot;&gt;*&lt;/span&gt;$title$&#10;    &lt;/label&gt;&#10;    &lt;div class=&quot;layui-input-inline&quot;&gt;&#10;        &lt;input type=&quot;text&quot; name=&quot;$name$&quot; id=&quot;$name$&quot; required=&quot;&quot; lay-verify=&quot;required&quot;&#10;               placeholder=&quot;$placeholder$&quot;&#10;               autocomplete=&quot;off&quot; class=&quot;layui-input&quot;&gt;&#10;    &lt;/div&gt;&#10;&lt;/div&gt;" description="必填水平输入框" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="placeholder" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="lumsg" value="// 1 正确, 2 错误(X), 3 询问，4 锁定, 5 不开心, 6 开心(笑脸) 7 感叹号&#10;layer.msg($msg$, {icon: 1, time: 1000}, function () {&#10;});" description="提示框" toReformat="false" toShortenFQNames="true">
+    <variable name="msg" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="luonselect" value="form.on('select($layfilter$)', function (data) {&#10;    // data.value&#10;});" description="select 事件" toReformat="false" toShortenFQNames="true">
+    <variable name="layfilter" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="luselect-inline" value="&lt;div class=&quot;layui-form-item&quot;&gt;&#10;    &lt;label for=&quot;$name$&quot; class=&quot;layui-form-label&quot;&gt;$title$&#10;    &lt;/label&gt;&#10;    &lt;div class=&quot;layui-input-inline&quot;&gt;&#10;        &lt;select name=&quot;$name$&quot; id=&quot;$name$&quot;&gt;&#10;            &lt;option&gt;请选择&lt;/option&gt;&#10;        &lt;/select&gt;&#10;    &lt;/div&gt;&#10;&lt;/div&gt;" description="水平下拉框" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="lutextarea-inline" value="&lt;div class=&quot;layui-form-item layui-form-text&quot;&gt;&#10;    &lt;label for=&quot;$name$&quot; class=&quot;layui-form-label&quot;&gt;$title$&lt;/label&gt;&#10;    &lt;div class=&quot;layui-input-block&quot;&gt;&#10;        &lt;textarea placeholder=&quot;$placeholder$&quot; id=&quot;$name$&quot; name=&quot;$name$&quot; class=&quot;layui-textarea&quot;&gt;&lt;/textarea&gt;&#10;    &lt;/div&gt;&#10;&lt;/div&gt;" description="水平文本框" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="placeholder" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="luuse" value="layui.use(['jquery', 'form', 'layer'], function () {&#10;    var $ = layui.$, layer = layui.layer, form = layui.form;&#10;});" description="layui.use" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="luform" value="form.on('submit(add)', function (data) {&#10;    $.ajax({&#10;        type: &quot;POST&quot;,&#10;        url: '&lt;?php \yii\helpers\Url::to([$url$]) ?&gt;',&#10;        data: data.field,&#10;        success: function (data, textStatus, xhr) {&#10;            // console.log('success', textStatus, xhr);return;&#10;            layer.msg(data, {icon: 6, time: 1000}, function () {&#10;                // 获得frame索引&#10;                var index = parent.layer.getFrameIndex(window.name);&#10;                //关闭当前frame&#10;                parent.layer.close(index);&#10;                parent.location.reload();&#10;            });&#10;        },&#10;        error: function (xhr, textStatus, errorThrown) {&#10;            // 1 正确, 2 错误(X), 3 询问，4 锁定, 5 不开心, 5 开心(笑脸)&#10;            layer.alert(textStatus + ':' + xhr.responseText, {icon: 2}, function (index) {&#10;                layer.close(index);&#10;            });&#10;        },&#10;        dataType: 'text'&#10;    });&#10;    return false;&#10;});" description="表单提交事件" toReformat="false" toShortenFQNames="true">
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="lucsrf" value="&lt;div class=&quot;layui-form-item&quot;&gt;&#10;    &lt;label for=&quot;L_repass&quot; class=&quot;layui-form-label&quot;&gt;&lt;/label&gt;&#10;    &lt;input name=&quot;_csrf&quot; type=&quot;hidden&quot; id=&quot;_csrf&quot; value=&quot;&lt;?= \Yii::$app-&gt;request-&gt;csrfToken ?&gt;&quot;&gt;&#10;    &lt;?php if ($model-&gt;id) { ?&gt;&#10;        &lt;input type=&quot;hidden&quot; name=&quot;id&quot; value=&quot;&lt;?php echo $model-&gt;id ?&gt;&quot;&gt;&#10;    &lt;?php } ?&gt;&#10;    &lt;button class=&quot;layui-btn&quot; lay-filter=&quot;*&quot; lay-submit=&quot;&quot;&gt;&#10;        &lt;?php echo $model-&gt;id ? '保存' : '增加'; ?&gt;&#10;    &lt;/button&gt;&#10;&lt;/div&gt;" description="yii2 layui csrf" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="ludate-html" value="&lt;div class=&quot;layui-form-item&quot;&gt;&#10;    &lt;label for=&quot;start&quot; class=&quot;layui-form-label&quot;&gt;&lt;/label&gt;&#10;    &lt;div class=&quot;layui-input-inline&quot;&gt;&#10;        &lt;input type=&quot;text&quot; id=&quot;start&quot; class=&quot;layui-input&quot; autocomplete=&quot;off&quot; name=&quot;start&quot;&gt;&#10;    &lt;/div&gt;&#10;&lt;/div&gt;" description="Date Html" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="lusearch-form" value="&lt;div class=&quot;layui-row&quot; style=&quot;margin-bottom: 10px;&quot;&gt;&#10;    &lt;div class=&quot;layui-inline&quot;&gt;&#10;        &lt;input class=&quot;layui-input&quot; placeholder=&quot;注册开始日期&quot; autocomplete=&quot;off&quot;&#10;               name=&quot;start&quot; id=&quot;start&quot;&gt;&#10;    &lt;/div&gt;&#10;    &lt;div class=&quot;layui-inline&quot;&gt;&#10;        &lt;button class=&quot;layui-btn&quot; lay-submit=&quot;&quot; ng-click=&quot;submit()&quot;&gt;&lt;i class=&quot;layui-icon&quot;&gt;&amp;#xe615;&lt;/i&gt;&lt;/button&gt;&#10;    &lt;/div&gt;&#10;&lt;/div&gt;" description="搜索表单(列表)" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="lusearch-form-select" value="&lt;div class=&quot;layui-inline&quot;&gt;&#10;    &lt;select id=&quot;$id$&quot; ng-model=&quot;search.$id$&quot; class=&quot;input-height&quot; &gt;&#10;        &lt;option value=&quot;&quot;&gt;分类栏目&lt;/option&gt;&#10;    &lt;/select&gt;&#10;&lt;/div&gt;" description="搜索表单中的 select" toReformat="false" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="lung1delete" value="layer.alert('确定要从部门中移除用户吗？', {icon: 3}, function (index) {&#10;    var params = _.pick(item, ['rid', 'uid', 'start', 'end']);&#10;    adminService.userUnbind(params).then(function (response) {&#10;        console.log('success',response,itemIndex);&#10;        $scope.users.splice(itemIndex, 1);&#10;    }, function (error) {&#10;        layer.alert('删除失败:' + error, {icon: 2}, function (index) {&#10;            layer.close(index);&#10;        });&#10;    });&#10;&#10;    layer.close(index);&#10;});" description="layui+ng1 delete" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="lubtnadd" value="&lt;button class=&quot;layui-btn layui-btn-xs&quot; onclick=&quot;page_show('$title$','$url$')&quot;&gt;&#10;&lt;i class=&quot;icon iconfont layui-extend-add&quot;&gt;&lt;/i&gt; $title$&#10;&lt;/button&gt;" description="layui 添加按钮" toReformat="false" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="lulayerprompt" value="layer.prompt(function(value, index, elem){&#10;  alert(value); //得到value&#10;  layer.close(index);&#10;});" description="简单的输入框" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="lulayerprompt-define" value="layer.prompt({&#10;  formType: 2,&#10;  value: '初始值',&#10;  title: '请输入值',&#10;  area: ['800px', '350px'] //自定义文本域宽高&#10;}, function(value, index, elem){&#10;  alert(value); //得到value&#10;  layer.close(index);&#10;});" description="自定义输入框" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="lucheckboxignore" value="&lt;input type=&quot;checkbox&quot; name=&quot;$name$[]&quot; lay-ignore ng-checked=&quot;false&quot; /&gt;" description="原生的 checkbox" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="luignore" value=" lay-ignore" description="忽略美化" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="lureset" value="&lt;a class=&quot;layui-btn layui-btn-normal&quot; ng-click=&quot;reset()&quot;&gt;&lt;i class=&quot;layui-icon&quot;&gt;&amp;#x1006;&lt;/i&gt;&lt;/a&gt;" description="重置按钮样式" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="lureset-js" value="var search = {};&#10;$scope.search = _.clone(search);&#10;$scope.reset = function () {&#10;    $scope.search = _.assign(_.clone(search), {date_xls: $scope.search.date_xls});&#10;};" description="重置" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="luverify" value="lay-verify=&quot;required&quot;" description="验证器" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="lufilter" value="lay-filter=&quot;$name$&quot;" description="过滤器，用来监听值" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="lufilter-on-select" value="form.on('select($filter$)', function(data){&#10;  console.log(data.elem); //得到select原始DOM对象&#10;  console.log(data.value); //得到被选中的值&#10;  console.log(data.othis); //得到美化后的DOM对象&#10;}); " description="监听 select 值" toReformat="false" toShortenFQNames="true">
+    <variable name="filter" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="luform-initvalue" value="//formTest 即 class=&quot;layui-form&quot; 所在元素对应的 lay-filter=&quot;&quot; 对应的值&#10;form.val(&quot;formTest&quot;, {&#10;  &quot;username&quot;: &quot;贤心&quot; // &quot;name&quot;: &quot;value&quot;&#10;  ,&quot;sex&quot;: &quot;女&quot;&#10;  ,&quot;auth&quot;: 3&#10;  ,&quot;check[write]&quot;: true&#10;  ,&quot;open&quot;: false&#10;  ,&quot;desc&quot;: &quot;我爱layui&quot;&#10;})" description="表单初始化值" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="luverify-on" value="form.verify({&#10;  username: function(value, item){ //value：表单的值、item：表单的DOM对象&#10;    return '错误提示';&#10;  }&#10; })" description="验证器校验" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="luupload-html" value="&lt;button type=&quot;button&quot; class=&quot;layui-btn&quot; id=&quot;upload&quot;&gt;&#10;    &lt;i class=&quot;layui-icon&quot;&gt;&amp;#xe67c;&lt;/i&gt;上传&#10;&lt;/button&gt;&#10;&#10;&lt;input name=&quot;_csrf&quot; type=&quot;hidden&quot; id=&quot;_csrf&quot; value=&quot;&lt;?= \Yii::$app-&gt;request-&gt;csrfToken ?&gt;&quot;&gt;" description="文件上传 html" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="luupload-js" value="layui.use('upload', function () {&#10;    var upload = layui.upload;&#10;    //执行实例&#10;    var uploadInst = upload.render({&#10;        elem: '#upload', //绑定元素&#10;        url: '?r=wechat/config/edit&amp;action=qrcode', // 上传接口地址&#10;        accept: 'images', // 上传时校验文件类型 images, file, video, audio&#10;        data: {'_csrf': document.getElementById('_csrf').value}, // 上传的数据&#10;        // headers: {token: 'sasasas'}, // 请求头&#10;        // acceptMime: 'image/jpg, image/png', // 筛选出的文件类型&#10;        // exts: 'zip|rar|7z', // 允许上传的文件后缀&#10;        // auto: true, // 选完文件后自动上传，默认 true&#10;        // bindAction: '#btn', // 如果 auto:false，那么在点击 #btn 元素后再上传,&#10;        // field: 'file', // 文件域的字段名，默认 file&#10;        // size:0, // 可允许上传的文件大小，单位KB，不支持 ie8/9&#10;        // multiple: false, // 允许多文件上传，不支持 ie8/9&#10;        // choose: function(obj){}, // 选择文件后的回调函数&#10;        // before: function(obj){}, // 文件提交前回调&#10;        // error: function(){}, // 执行上传请求出现异常的回调, index 当前文件索引，upload 重新上传方法&#10;        // 图片预览、取消上传、重新上传 等查看官方文档 https://www.layui.com/doc/modules/upload.html&#10;        done: function (res) { // 上传后回调, res 服务器响应信息, index 当前文件索引, upload 重新上传方法&#10;            if (!res.success) {&#10;                // 1 正确, 2 错误(X), 3 询问，4 锁定, 5 不开心, 6 开心(笑脸) 7 感叹号&#10;                layer.alert(res.message, {icon: 2}, function (index) {&#10;                    layer.close(index);&#10;                });&#10;            } else {&#10;&#10;            }&#10;            //上传完毕回调&#10;            console.log('done', res);&#10;        }&#10;    });&#10;});" description="文件上传处理 js" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="lurequire" value="&lt;span class=&quot;x-red&quot;&gt;*&lt;/span&gt;" description="span.x-red" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="lujquery" value=" layui.use(['jquery', 'layer'], function () {&#10;    var $ = layui.$, layer = layui.layer;&#10;    &#10;});" description="layui jquery" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="luuselayer" value="layui.use(['layer'], function () {&#10;    var layer = layui.layer;&#10;    &#10;});" description="use layer" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="luxblock" value="&lt;div class=&quot;xblock&quot;&gt;&#10;    &lt;span class=&quot;x-right&quot; style=&quot;line-height:40px&quot;&gt;&lt;/span&gt;&#10;&lt;/div&gt;" description="横幅" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="luopenIntab" value="function openInTab(route, title, id) {&#10;    var url = '?r=' + route;&#10;    if (id === undefined) {&#10;        id = a.replace(/\//g, '_');&#10;    }&#10;    openInFrame(url, title,id);&#10;}" description="x-admin 打开菜单" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="luform-page-php" value="use yii\web\View;&#10;&#10;/**&#10; * @var View $this&#10; */&#10;$this-&gt;title = '$title$';&#10;?&gt;&#10;&#10;&#10;&lt;div class=&quot;layui-card&quot;&gt;&#10;    &lt;div class=&quot;layui-card-body&quot;&gt;&#10;        &lt;form class=&quot;layui-form&quot;&gt;&#10;            &lt;div class=&quot;layui-form-item&quot;&gt;&#10;                &lt;label class=&quot;layui-form-label&quot;&gt;&lt;/label&gt;&#10;                &lt;div class=&quot;layui-input-inline&quot;&gt;&#10;                    &lt;input type=&quot;text&quot; lay-verify=&quot;required&quot;&#10;                           autocomplete=&quot;off&quot;&#10;                           class=&quot;layui-input&quot;&gt;&#10;                &lt;/div&gt;&#10;            &lt;/div&gt;&#10;&#10;            &lt;div class=&quot;layui-form-item&quot;&gt;&#10;                &lt;label for=&quot;L_repass&quot; class=&quot;layui-form-label&quot;&gt;&lt;/label&gt;&#10;                &lt;input name=&quot;_csrf&quot; type=&quot;hidden&quot; id=&quot;_csrf&quot; value=&quot;&lt;?= \Yii::$app-&gt;request-&gt;csrfToken ?&gt;&quot;&gt;&#10;                &lt;button class=&quot;layui-btn&quot; lay-filter=&quot;*&quot; lay-submit=&quot;&quot;&gt;&#10;                    确定&#10;                &lt;/button&gt;&#10;            &lt;/div&gt;&#10;        &lt;/form&gt;&#10;&#10;    &lt;/div&gt;&#10;&lt;/div&gt;&#10;&#10;&lt;script&gt;&#10;    layui.use(['form', 'layer'], function () {&#10;        var form = layui.form, layer = layui.layer;&#10;        //监听提交&#10;        form.on('submit(*)', function (data) {&#10;            console.log(data.field);&#10;            $.ajax({&#10;                type: &quot;POST&quot;,&#10;                url: '#',&#10;                data: data.field,&#10;                success: function (data, textStatus, xhr) {&#10;                    // console.log('success', textStatus, xhr);return;&#10;                    layer.msg(data, {icon: 6, time: 1000}, function () {&#10;                        var index = parent.layer.getFrameIndex(window.name);&#10;                        parent.layer.close(index);&#10;                        parent.location.reload();&#10;                    });&#10;                },&#10;                error: function (xhr, textStatus, errorThrown) {&#10;                    // 1 正确, 2 错误(X), 3 询问，4 锁定, 5 不开心, 5 开心(笑脸)&#10;                    layer.alert(textStatus + ':' + xhr.responseText, {icon: 2}, function (index) {&#10;                        layer.close(index);&#10;                    });&#10;                },&#10;                dataType: 'text'&#10;            });&#10;            return false;&#10;        });&#10;    });&#10;&lt;/script&gt;" description="带有 form 的页面" toReformat="false" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>

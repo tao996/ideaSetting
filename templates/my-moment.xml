@@ -1,0 +1,39 @@
+<templateSet group="my-moment">
+  <template name="momonth" value="moment().add($n$, 'months').format('YYYY-MM')" description="月份偏移" toReformat="false" toShortenFQNames="true">
+    <variable name="n" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="moday" value="moment().add($n$,'day').format('YYYY-MM-DD')" description="日期偏移" toReformat="false" toShortenFQNames="true">
+    <variable name="n" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="motoday" value="moment().format('YYYY-MM-DD')" description="今天 YYYY-MM-DD" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="mopre-ng" value="$scope.prevMonth = function () {&#10;    $scope.search.date = moment($scope.search.date).add(-1, 'months').format('YYYY-MM');&#10;};" description="moment+ng1 上一时间" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="monext-ng" value="$scope.nextMonth = function () {&#10;    var nextDate = moment($scope.search.date).add(1, 'months');&#10;    if (nextDate.unix() &gt; moment(new Date()).unix()) {&#10;        // 1 正确, 2 错误(X), 3 询问，4 锁定, 5 不开心, 6 开心(笑脸) 7 感叹号&#10;        layer.alert('无法查询下个月的数据', {icon: 2}, function (index) {&#10;            layer.close(index);&#10;        });&#10;        return;&#10;    }&#10;    $scope.search.date = nextDate.format('YYYY-MM');&#10;    onLoadData();&#10;};" description="moment+ng1 下一时间" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="ludateprev" value="function prevDate() {&#10;    var date = moment($('#date').val() + '-01-01').add(-1, 'years').format('YYYY');// months, days&#10;    $('#date').val(date);&#10;};" description="moment+layui 上一时间" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="ludatenext" value="&#10;function nextDate() {&#10;    var nextDate = moment($('#date').val() + '-01-01').add(1, 'years');// months, days&#10;    if (nextDate.unix() &gt; moment(new Date()).unix()) {&#10;        // 1 正确, 2 错误(X), 3 询问，4 锁定, 5 不开心, 6 开心(笑脸) 7 感叹号&#10;        layer.alert('无法查询下年的数据', {icon: 2}, function (index) {&#10;            layer.close(index);&#10;        });&#10;        return;&#10;    }&#10;    $('#date').val(nextDate.format('YYYY'));&#10;};" description="moment+layui 下一时间" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+</templateSet>

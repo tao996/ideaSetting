@@ -1,0 +1,25 @@
+<templateSet group="Go-fsl">
+  <template name="iee" value="i18n.Wrap(gerror.Wrap(err, &quot;$msg$&quot;), code$code$)" description="i18n.Wrap(gerror.Wrap" toReformat="false" toShortenFQNames="true">
+    <variable name="msg" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="ieenotfound" value="i18n.Code(code.StatusRecordNotFound)" description="Record Not Found" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="GO_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="ieeparam" value="i18n.Code(code.StatusParamNotMarch)" description="Param Not Match" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="GO_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="gee" value="gerror.Wrap(err, &quot;$msg$&quot;)" description="gerror.Wrap" toReformat="false" toShortenFQNames="true">
+    <variable name="msg" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_EXPRESSION" value="true" />
+    </context>
+  </template>
+</templateSet>

@@ -1,0 +1,71 @@
+<templateSet group="my-flutter">
+  <template name="blocstate" value="import 'package:equatable/equatable.dart';&#10;import 'package:meta/meta.dart';&#10;&#10;@immutable&#10;abstract class $1$State extends Equatable {&#10;  $1$State([List props = const &lt;dynamic&gt;[]]) : super(props);&#10;}" description="Bloc State" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="bloc" value="import 'package:bloc/bloc.dart';&#10;&#10;class $My$Bloc extends Bloc&lt;$My$Event, $State$&gt; {&#10;  @override&#10;  $State$ get initialState =&gt; $2$;&#10;&#10;  @override&#10;  Stream&lt;$State$&gt; mapEventToState(&#10;    $My$Event event,&#10;  ) async* {&#10;    &#10;  }&#10;}" description="for Equatable state/event" toReformat="false" toShortenFQNames="true">
+    <variable name="My" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="State" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="blocevent" value="import 'package:equatable/equatable.dart';&#10;import 'package:meta/meta.dart';&#10;&#10;@immutable&#10;abstract class $1$Event extends Equatable {&#10;  $1$Event([List props = const &lt;dynamic&gt;[]]) : super(props);&#10;}" description="Bloc Event" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="myfontAwesomIcons" value="FontAwesomeIcons$1$" description="FontAwesomIcons" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="mynaviPush" value="Navigator.push(context,MaterialPageRoute(builder: (context) =&gt; $1$,),);" description="Navigator.push" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="myblocchild" value="class $name$ extends $bloc$  {&#10;@override&#10;String toString() =&gt; '$name$';&#10;}" description="Bloc Child" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="bloc" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="mypopupmenubottom" value="PopupMenuButton(&#10;    onSelected: (String value) {},&#10;    itemBuilder: (BuildContext context) =&gt; &lt;PopupMenuEntry&lt;String&gt;&gt;[&#10;        PopupMenuItem(value: '', child: new Text('')),&#10;    ],&#10;)" description="PopupMenuButton" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="DART_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="myentity" value="class $1$ {&#10;$1$();&#10;static $1$ fromJson(Map&lt;String,dynamic&gt; json){return $1$();}&#10;static List&lt;$1$&gt; listFromJson(List&lt;dynamic&gt; json){return json.map((r) =&gt; $1$.fromJson(r)).toList();}&#10;Map&lt;String, Object&gt; toJson(){ return {}; }&#10;}" description="Class Entity" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="mydelayed" value="Future.delayed(const Duration(seconds: 3));" description="延时执行" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="DART_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="myjson" value="&#10;static $1$ fromJson(Map&lt;String, dynamic&gt; json) {return $1$();}&#10;Map&lt;String, Object&gt; toJson() {return {};}" description="fromJson/toJson" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART" value="true" />
+    </context>
+  </template>
+  <template name="mybloclistener" value="BlocListener(&#10;    bloc:$1$,&#10;    listener:(context, state){&#10;        if (state is $2$Loading) {&#10;            WloadingToast.show(); // 加载框&#10;        } else if (state is $2$Failed) {&#10;            Wnav.snackBar(context, state.error); // 错误提示&#10;        }&#10;    },&#10;    child:$3$,&#10;)&#10;" description="BlocListener" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="2" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="3" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="DART_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

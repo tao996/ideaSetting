@@ -1,0 +1,14 @@
+<templateSet group="my-nz">
+  <template name="nz-field" value="&lt;nz-form-item&gt;&#10;    &lt;nz-form-label nzSm=&quot;6&quot; nzXs=&quot;24&quot;&gt;$label$&lt;/nz-form-label&gt;&#10;    &lt;nz-form-control nzSm=&quot;14&quot; nzXs=&quot;24&quot;&gt;&#10;      $content$&#10;    &lt;/nz-form-control&gt;&#10;&lt;/nz-form-item&gt;" description="nz form field" toReformat="false" toShortenFQNames="true">
+    <variable name="label" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="content" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="nz-row" value="&lt;div nz-row&gt;&#10;    &lt;div nz-col nzSm=&quot;6&quot; nzXs=&quot;24&quot;&gt;&lt;/div&gt;&#10;    &lt;div nz-col nzSm=&quot;14&quot; nzXs=&quot;24&quot;&gt;&#10;      &#10;    &lt;/div&gt;&#10;&lt;/div&gt;" description="nz row grid" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML_TEXT" value="true" />
+    </context>
+  </template>
+</templateSet>

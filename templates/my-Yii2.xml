@@ -1,0 +1,405 @@
+<templateSet group="my-Yii2">
+  <template name="yiidbtruncateTable" value="\Yii::$app-&gt;db-&gt;createCommand()-&gt;truncateTable($tableName$)-&gt;execute();" description="truncate a table" toReformat="false" toShortenFQNames="true">
+    <variable name="tableName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiidbcount" value="$this-&gt;query = new \yii\db\Query();&#10;$this-&gt;query-&gt;from($tableName$)-&gt;count()" description="just only table count" toReformat="false" toShortenFQNames="true">
+    <variable name="tableName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiidbindexby" value="$modelFind$-&gt;asArray()-&gt;indexBy($columnName$)-&gt;all();" description="select all and index by column" toReformat="false" toShortenFQNames="true">
+    <variable name="modelFind" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="columnName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiiadelete" value="&lt;?= \yii\helpers\Html::a('删除', ['delete', 'id' =&gt; $id$], [&#10;    'class' =&gt; 'btn btn-sm btn-danger',&#10;    'data' =&gt; [&#10;        'confirm' =&gt; '你确定要删除吗?',&#10;        'method' =&gt; 'post',&#10;    ],&#10;]) ?&gt;" description="弹出删除操作" toReformat="false" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="yiiabutton" value="&lt;a href=&quot;&lt;?= \yii\helpers\Url::to(['$controller$/$action$','id' =&gt; $id$]); ?&gt;&quot; class=&quot;btn btn-sm $btn$&quot;&gt;$text$&lt;/a&gt;" description="生成链接按钮" toReformat="false" toShortenFQNames="true">
+    <variable name="controller" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="action" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="btn" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="text" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="yiiflashsession" value="\Yii::$app-&gt;session-&gt;setFlash('$key$','$message$');" description="yii flash session" toReformat="false" toShortenFQNames="true">
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="message" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiia" value="&lt;?= \yii\helpers\Url::to(['$controller$/$action$',$keyValue$]); ?&gt;" description="url to" toReformat="false" toShortenFQNames="true">
+    <variable name="controller" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="action" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="keyValue" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="yiiForm" value="&lt;?php&#10;$form = \yii\widgets\ActiveForm::begin([&#10;    'action' =&gt; ['$controller$/$action$'],&#10;    'method'=&gt;'post',&#10;    'options' =&gt; ['enctype' =&gt; 'multipart/form-data', 'class' =&gt; 'form-horizontal']&#10;]);&#10;?&gt;&#10;&#10;&lt;?php \yii\widgets\ActiveForm::end(); ?&gt;" description="yii 表单" toReformat="false" toShortenFQNames="true">
+    <variable name="controller" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="action" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="yiiForm-file-input" value="&lt;?= $form-&gt;field($model,'uploadFile[]')-&gt;fileInput(['multiple' =&gt; 'multiple']) ?&gt;" description="文件上传控件" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="yiiForm-checkbox" value="&lt;?= $form-&gt;field($model, '$name$')-&gt;checkboxList($arrayKeyTexts$) ?&gt;" description="checkboxList 多项选择" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="arrayKeyTexts" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="yiiForm-select" value="&lt;?= $form-&gt;field($model, '$name$')-&gt;dropDownList($arrayKeyTexts$, array('prompt' =&gt; '$promt$')) ?&gt;" description="dropDownList 下拉列表" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="arrayKeyTexts" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="promt" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="yiiForm-submit" value="&lt;?= \yii\helpers\Html::submitButton('确定', ['class' =&gt; 'btn btn-primary']) ?&gt;&#10;" description="submit button" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="yiipagination-html" value="&lt;?= \yii\widgets\LinkPager::widget([&#10;    'pagination' =&gt; $pagination,&#10;]); ?&gt;" description="分页 tpl" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="yiidbbatchInsert" value="$sql = \Yii::$app-&gt;db-&gt;queryBuilder-&gt;batchInsert(&#10;    $tableName$,&#10;    $columns$, &#10;    $datas$&#10;);&#10;\Yii::$app-&gt;db-&gt;createCommand($sql)-&gt;execute();" description="批量添加" toReformat="false" toShortenFQNames="true">
+    <variable name="tableName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="columns" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="datas" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiipagination" value="$query = $model$::find()$condition$;&#10;$pagination = new Pagination(['totalCount' =&gt; $query-&gt;count(), 'pageSize' =&gt; 15]);&#10;$data = $query-&gt;offset($pagination-&gt;offset)-&gt;limit($pagination-&gt;limit)$others$-&gt;all();&#10;&#10;return $this-&gt;render('$page$',[&#10;    'pagination' =&gt; $pagination,&#10;    'data' =&gt; $data&#10;]);" description="分页" toReformat="true" toShortenFQNames="true">
+    <variable name="model" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="condition" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="others" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="page" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiiForm-horizontal" value="&lt;?php $form = \yii\widgets\ActiveForm::begin([&#10;    'options' =&gt; ['class' =&gt; 'form-horizontal'],&#10;    'fieldConfig' =&gt; [&#10;        'template' =&gt; &quot;&lt;div class='col-xs-3 col-sm-2 text-right'&gt;{label}&lt;/div&gt;&#10;        &lt;div class='col-xs-9 col-sm-7'&gt;{input}&lt;/div&gt;&#10;        &lt;div class='col-xs-12 col-xs-offset-3 col-sm-3 col-sm-offset-0'&gt;{error}&lt;/div&gt;&quot;,&#10;    ]&#10;]); ?&gt;&#10;&#10;&lt;?php \yii\widgets\ActiveForm::end(); ?&gt;" description="水平表单" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiimodallayout" value="// 可以将此代码放置在操作模板中&#10;\yii\bootstrap\Modal::begin([&#10;    'id' =&gt; 'common-modal',&#10;]);&#10;&#10;$js = &lt;&lt;&lt;JS&#10;$(&quot;.buttonClass&quot;).click(function(){ &#10;    var aUrl = $(this).attr('data-url');&#10;    console.log(aUrl);&#10;    $($(this).attr('data-target')).modal(&quot;show&quot;).find(&quot;.modal-body&quot;).load(aUrl); &#10;    return false;&#10;});&#10;JS;&#10;$this-&gt;registerJs($js);&#10;&#10;\yii\bootstrap\Modal::end();" description="模态 1/4 组件" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiidbdeletein" value="\Yii::$app-&gt;db-&gt;createCommand()-&gt;delete(tableName,['in',$field$, $values$])-&gt;execute();" description="删除 in 条件" toReformat="false" toShortenFQNames="true">
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="values" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiijs" value="$js = &lt;&lt;&lt;JS&#10;JS;&#10;$this-&gt;registerJs($js, \yii\web\View::POS_END);" description="使用 js" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiidbeach" value="$query = (new Query())-&gt;from($tablename$);&#10;&#10;foreach ($query-&gt;each() as $record) {&#10;    &#10;}" description="一条一条查询" toReformat="false" toShortenFQNames="true">
+    <variable name="tablename" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiicontrollerbehaviors" value="public function behaviors()&#10;{&#10;    return [&#10;        'access' =&gt; [&#10;            'class' =&gt; AccessControl::className(),&#10;            'only' =&gt; ['logout', 'signup'],&#10;            'rules' =&gt; [&#10;                [&#10;                    'actions' =&gt; ['signup'],&#10;                    'allow' =&gt; true,&#10;                    'roles' =&gt; ['?'],&#10;                ],&#10;                [&#10;                    'actions' =&gt; ['logout'],&#10;                    'allow' =&gt; true,&#10;                    'roles' =&gt; ['@'],&#10;                ],&#10;            ],&#10;        ],&#10;        'verbs' =&gt; [&#10;            'class' =&gt; VerbFilter::className(),&#10;            'actions' =&gt; [&#10;                'logout' =&gt; ['post'],&#10;            ],&#10;        ],&#10;    ];&#10;}" description="控制器 behaviors" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiidelete" value="\Yii::$app-&gt;db-&gt;createCommand()-&gt;delete($tablenam$, $conditions$)-&gt;execute();" description="yii delete records" toReformat="false" toShortenFQNames="true">
+    <variable name="tablenam" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="conditions" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiiupdate" value="\Yii::$app-&gt;db-&gt;createCommand()-&gt;update(&#10;    $table$,&#10;    $update$,&#10;    $condition$&#10;)-&gt;execute();" description="yii update records" toReformat="false" toShortenFQNames="true">
+    <variable name="table" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="update" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="condition" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiiinsert" value="\Yii::$app-&gt;db-&gt;createCommand()-&gt;insert('user', [&#10;    'name' =&gt; 'Sam','age' =&gt; 30,&#10;])-&gt;execute();" description="yii insert records" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiitimestamp" value="public function behaviors()&#10;{&#10;    return [&#10;        [&#10;            'class' =&gt; TimestampBehavior::class,&#10;        ]&#10;    ];&#10;}" description="模型的时间戳行为" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiijscode" value="&lt;?php&#10;$js = &lt;&lt;&lt;JS&#10;    $(function(){&#10;    &#10;    });&#10;JS;&#10;$this-&gt;registerJs($js);&#10;?&gt;" description="往 view 添加 js 代码" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="yiipagination-np" value="&lt;?= \yii\widgets\LinkPager::widget([&#10;    'pagination' =&gt; $pagination,&#10;    'nextPageLabel' =&gt; '下一页',&#10;    'prevPageLabel' =&gt; '上一页',&#10;    'maxButtonCount' =&gt; 0&#10;]); ?&gt;" description="只显示上一页下一页" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiibreadcrumbs" value="$this-&gt;params['breadcrumbs'][] = $this-&gt;title;" description="面包屑导航" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiirulepreg" value="['$filed$', 'match', 'pattern' =&gt; '|$pattern$|', 'message' =&gt; '$message$']," description="正则" toReformat="false" toShortenFQNames="true">
+    <variable name="filed" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="pattern" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="message" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiidroptable" value="foreach ([$tables$] as $table) {&#10;    if (\Yii::$app-&gt;db-&gt;createCommand('SHOW TABLES LIKE &quot;' . $table . '&quot;')-&gt;queryOne()) {&#10;        \Yii::$app-&gt;db-&gt;createCommand()-&gt;dropTable($table);&#10;    }&#10;}" description="drop a table" toReformat="false" toShortenFQNames="true">
+    <variable name="tables" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiidropindex" value="foreach (['table' =&gt; ['index']] as $table =&gt; $rmIndexs) {&#10;    $indexes = \Yii::$app-&gt;db-&gt;createCommand('show index from ' . $table)-&gt;queryAll();&#10;    $indexName = \common\services\DataValidate::compactArray($indexes, 'Column_name');&#10;    foreach ($rmIndexs as $index) {&#10;        if (in_array($index, $indexName)) {&#10;            \Yii::$app-&gt;db-&gt;createCommand()-&gt;dropIndex($index, $table);&#10;        }&#10;    }&#10;}" description="drop db table index" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiidropcolumn" value="foreach (['table' =&gt; ['column']] as $table =&gt; $columns) {&#10;    $rows = \Yii::$app-&gt;db-&gt;createCommand('show columns from ' . $table)-&gt;queryAll();&#10;    $fields = \common\services\DataValidate::compactArray($rows, 'Field');&#10;    foreach ($columns as $column) {&#10;        if (in_array($column, $fields)) {&#10;            \Yii::$app-&gt;db-&gt;createCommand()-&gt;dropColumn($table, $column);&#10;        }&#10;    }&#10;}" description="drop column" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiicachedata" value="$data = \Yii::$app-&gt;cache-&gt;get($key$);&#10;if ($data === false) {&#10;    $data = 1;&#10;    \Yii::$app-&gt;cache-&gt;set($key$, $data);&#10;}" description="yii cache data" toReformat="false" toShortenFQNames="true">
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiicss" value="$css = &lt;&lt;&lt;CSS&#10;&#10;CSS;&#10;$this-&gt;registerCss($css);" description="样式" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiibreadcurmbs-a" value="$this-&gt;params['breadcrumbs'][] = ['label' =&gt; '', 'url' =&gt; []];" description="面包屑导航带链接" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiirulerequired" value="[['$field$'],'required','requiredValue'=&gt;'必填值','message'=&gt;'提示信息']" description="必须值" toReformat="false" toShortenFQNames="true">
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiiruleemail" value="['$field$', 'email']," description="邮箱验证" toReformat="false" toShortenFQNames="true">
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiirulepregnot" value="['$filed$', 'match', 'not'=&gt;true, 'pattern' =&gt; '|$pattern$|', 'message' =&gt; '$message$']," description="正则取反" toReformat="false" toShortenFQNames="true">
+    <variable name="filed" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="pattern" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="message" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiiruleurl" value="['$field$', 'url', 'defaultScheme' =&gt; 'http']," description="网址" toReformat="false" toShortenFQNames="true">
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiirulecaptcha" value="['verificationCode', 'captcha']," description="验证码" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiirulecompare" value="['$field$', 'compare', 'compareValue' =&gt; 30, 'operator' =&gt; '&gt;=']," description="比较操作" toReformat="false" toShortenFQNames="true">
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiiruledefault" value="['$field$', 'default', 'value' =&gt; $value$]," description="默认值" toReformat="false" toShortenFQNames="true">
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiirulefile" value="['$field$', 'file', 'extensions' =&gt; ['png', 'jpg', 'gif'], 'maxSize' =&gt; 1024*1024*1024]," description="文件" toReformat="false" toShortenFQNames="true">
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiirulefilter" value="[['$fields$'], 'filter', 'filter' =&gt; 'trim', 'skipOnArray' =&gt; true]," description="过滤" toReformat="false" toShortenFQNames="true">
+    <variable name="fields" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiirulein" value="['$field$', 'in', 'range' =&gt; [$values$]]," description="范围" toReformat="false" toShortenFQNames="true">
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="values" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiiruleunique" value="['$field$', 'unique']," description="唯一性" toReformat="false" toShortenFQNames="true">
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiiruleinteger" value="['$field$', 'integer']," description="整数" toReformat="false" toShortenFQNames="true">
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiirulenumber" value="['$field$', 'number']," description="数字" toReformat="false" toShortenFQNames="true">
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiiruledouble" value="['$field$', 'double']," description="浮点数" toReformat="false" toShortenFQNames="true">
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiiruledate" value="[['$fields$], 'date']," description="日期" toReformat="false" toShortenFQNames="true">
+    <variable name="fields" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiirulestrlen" value="['$field$', 'string', 'length' =&gt; [$minlength$, $maxlength$]]," description="字符串长度" toReformat="false" toShortenFQNames="true">
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="minlength" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="maxlength" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiiruleboolean" value="['$field$', 'boolean', 'trueValue' =&gt; true, 'falseValue' =&gt; false, 'strict' =&gt; true]," description="布尔值" toReformat="false" toShortenFQNames="true">
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiiruleinteger-mul" value="[[$fields$],'required']," description="多个整数" toReformat="false" toShortenFQNames="true">
+    <variable name="fields" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiirulerequired-mul" value="[[$fields$],'required']," description="多个必须" toReformat="false" toShortenFQNames="true">
+    <variable name="fields" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiilike" value="['like','$field$',$value$]" description="like 搜索" toReformat="false" toShortenFQNames="true">
+    <variable name="field" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiicsrf" value="&lt;input name=&quot;_csrf&quot; type=&quot;hidden&quot; id=&quot;_csrf&quot; value=&quot;&lt;?= \Yii::$app-&gt;request-&gt;csrfToken ?&gt;&quot;&gt;" description="csrf token" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="yiitran" value="$transaction = \Yii::$app-&gt;db-&gt;beginTransaction();" description="事务" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiidbbindvalue" value="static $command;&#10;if (is_null($command)){&#10;    $command = \Yii::$app-&gt;db-&gt;createCommand('SELECT * FROM post WHERE id=:id');&#10;}&#10;// 多个参数 bindValues([':id'=&gt;1,':status'=&gt;1])&#10;$post1 = $command-&gt;bindValue(':id', 1)-&gt;queryOne();&#10;$post2 = $command-&gt;bindValue(':id', 2)-&gt;queryOne();" description="值绑定" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiidbbindparam" value="$command = \Yii::$app-&gt;db-&gt;createCommand('SELECT * FROM post WHERE id=:id')-&gt;bindParam(':id', $id);&#10;&#10;$id = 1;&#10;$post1 = $command-&gt;queryOne();&#10;&#10;$id = 2;&#10;$post2 = $command-&gt;queryOne();" description="参数绑定" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiiasset" value="$assetDir = AdminAsset::register($this)-&gt;baseUrl;" description="baseUrl 资源目录" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiiexecute" value="\Yii::$app-&gt;db-&gt;createCommand($sql$)-&gt;execute();" description="yii 执行语句" toReformat="false" toShortenFQNames="true">
+    <variable name="sql" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiiimage" value="// AdminAsset&#10;$imagesDir = $asset$::register($this)-&gt;baseUrl;" description="在模板中使用图片" toReformat="false" toShortenFQNames="true">
+    <variable name="asset" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiirulemin" value="['$name$', 'compare', 'compareValue' =&gt; 1, 'operator' =&gt; '&gt;=']," description="最小值" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiit" value="\Yii::t('$category$', '$message$')" description="yii2 i18n" toReformat="false" toShortenFQNames="true">
+    <variable name="category" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="message" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="yiitt" value="&lt;?php echo \Yii::t('$category$', '$message$') ?&gt;" description="echo \Yii::t" toReformat="false" toShortenFQNames="true">
+    <variable name="category" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="message" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+</templateSet>

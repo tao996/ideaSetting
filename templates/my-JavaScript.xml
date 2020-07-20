@@ -1,0 +1,65 @@
+<templateSet group="my-JavaScript">
+  <template name="$ajax-base" value="$.ajax({&#10;    type: &quot;POST&quot;,&#10;    url: $url$,&#10;    data: $data$,&#10;    success: function(data, textStatus, xhr){},&#10;    error: function(xhr, textStatus, errorThrown){},&#10;    dataType: 'json'&#10;});" description="$.ajax" toReformat="false" toShortenFQNames="true">
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="data" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="$ajax-detail" value="$.ajax({&#10;    async: true,&#10;    url: $url$,&#10;    method: 'GET',&#10;    headers:{}, // X-Requested-With: XMLHttpRequest 总是会被自动添加&#10;    // xhrFields: { withCredentials: true },&#10;    // ifModified: false,&#10;    data: $data$, // 发送服务器的数据&#10;    success: function(data, textStatus, xhr){},&#10;    complete: function(xhr, textStatus){},&#10;    // statusCode: { 404: function(){}},&#10;    // textStatus: null, timeout, error, abort, parsererror&#10;    error: function(xhr, textStatus, errorThrown){},&#10;    contentType:'application/x-www-form-urlencoded; charset=UTF-8',&#10;    dataType: 'json', // xml, json, script, html, jsonp, text&#10;    converters:{&quot;* text&quot;: window.String, &quot;text html&quot;: true, &quot;text json&quot;: jQuery.parseJSON, &quot;text xml&quot;: jQuery.parseXML},&#10;    crossDomain: false,&#10;    // jsonp:{ jsonp: false, jsonpCallback: &quot;callbackName&quot; }&#10;    // jsonpCallback: function(){}&#10;    // context:document.body, 在下面 $(this) 代表 document.body&#10;})&#10;.done(function(data, textStatus, xhr){}) // jQuery 1.5&#10;.fail(function(xhr, textStatus, errorThrown){}) // jQuery 1.5&#10;.always(function(data|xhr, textStatus, xhr|errorThrown){}) // jQuery 1.6&#10;.then(function(data, textStatus, xhr){}, function(xhr, textStatus, errorThrown){}); // jQuery 1.8" description="$.ajax detail" toReformat="false" toShortenFQNames="true">
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="data" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="$ajax-async" value="$.ajax({&#10;    async: false,&#10;    url: '$url$', // 地址&#10;    method: 'POST',&#10;    data: $data$, // 发送服务器的数据&#10;    success: function (data) {&#10;    },&#10;    dataType: 'text' // 反应数据&#10;});" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="data" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="$get" value="$.get($url$,function(data){ }, &quot;json&quot;);" description="$.get 请求" toReformat="false" toShortenFQNames="true">
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="$post" value=" $.post(&quot;$url$&quot;,{$data$},function(result){&#10;    &#10;},'json');" description="$.post 请求" toReformat="false" toShortenFQNames="true">
+    <variable name="url" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="data" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jq-checked" value="// jQuery version &gt; 1.6&#10;var isChecked = $('$ele$').prop('checked');&#10;var isChecked = $('$ele$').is(&quot;:checked&quot;); &#10;//设置选中 &#10;$('$ele$').prop('checked',true); " description="复选框是否选中" toReformat="false" toShortenFQNames="true">
+    <variable name="ele" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jsDate2Timestamp" value="Date.parse($jsDate$) / 1000" description="Date 转为时间戳" toReformat="false" toShortenFQNames="true">
+    <variable name="jsDate" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jsTimestamp2LocalDate" value="var d = new Date();&#10;d.setTime($timestamp$ * 1000);&#10;return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();" description="时间戳转为本地时间" toReformat="false" toShortenFQNames="true">
+    <variable name="timestamp" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="jsTimestamp2Date" value="new Date(parseInt($phpTimestamp$) * 1000)" description="时间戳转为 Date" toReformat="false" toShortenFQNames="true">
+    <variable name="phpTimestamp" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="tsignore" value="// @ts-ignore" description="ts ignore" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="TypeScript" value="true" />
+    </context>
+  </template>
+</templateSet>

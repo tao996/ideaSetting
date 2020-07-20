@@ -1,0 +1,51 @@
+<templateSet group="my-PhpTest">
+  <template name="testcept" value="/**&#10; * @var \Codeception\Scenario $scenario&#10; */&#10;$I = new AcceptanceTester($scenario);" description="过程化测试" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="testcest" value="class $Name$Cest&#10;{&#10;    public function _before(FunctionalTester $I)&#10;    {&#10;&#10;    }&#10;&#10;    public function action$Name$(FunctionalTester $I)&#10;    {&#10;&#10;    }&#10;}" description="面向对象" toReformat="false" toShortenFQNames="true">
+    <variable name="Name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="testexception" value="/**&#10; * @expectedException \Exception&#10; * @expectedExceptionCode $code$&#10; */&#10;public function test$functionName$(){&#10;    &#10;}" description="phpunit test with exception" toReformat="false" toShortenFQNames="true">
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="functionName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="testdepends" value="/**&#10; * @depends $function$&#10; */" description="phpunit depends" toReformat="false" toShortenFQNames="true">
+    <variable name="function" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="testtpl" value="use Codeception\Test\Unit;&#10;&#10;class $class$ extends Unit&#10;{&#10;    /**&#10;     * @var UnitTester&#10;     */&#10;    protected $tester;&#10;&#10;    &#10;}" description="codecept unit test tpl" toReformat="false" toShortenFQNames="true">
+    <variable name="class" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="testfixtures" value="public function _fixtures()&#10;{&#10;    return [&#10;        $tablename$ =&gt; [&#10;            'class' =&gt; $fixtureClassName$,&#10;            // 'dataFile' =&gt; codecept_data_dir().'$tablename$.php' ,&#10;            'dataFile' =&gt; '@tests/fixtures/data/$tablename$.php' ,&#10;        ],&#10;    ];&#10;}&#10;" description="Fixture" toReformat="false" toShortenFQNames="true">
+    <variable name="tablename" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="fixtureClassName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="tester" value="/**&#10; * @var UnitTester&#10; */&#10;protected $tester;" description="帮助断言" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP Class Member" value="true" />
+    </context>
+  </template>
+  <template name="_fixtures" value="public function _fixtures()&#10;{&#10;    return [&#10;        'tableName' =&gt; [&#10;            'class' =&gt; $fixtureClass$Fixture::class,&#10;            'dataFile' =&gt; '@tests/fixtures/data/$data$.php'&#10;        ]&#10;    ];&#10;}" description="添加一个 Fixture" toReformat="false" toShortenFQNames="true">
+    <variable name="fixtureClass" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="data" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>

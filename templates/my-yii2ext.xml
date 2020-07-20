@@ -1,0 +1,158 @@
+<templateSet group="my-yii2ext">
+  <template name="@title" value="@title" description="标题注解" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@access" value="@access" description="访问权限注解 public|guest|user|admin" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@cache-model" value="@cache model:$modelName$:$event" description="模型缓存" toReformat="false" toShortenFQNames="true">
+    <variable name="modelName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@sort" value="@sort 0" description="排序" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@action-before" value="@before" description="操作之前 *|module/control/action" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@action-after" value="@after" description="操作之后 *|module/control/action" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@api-request" value="@request $route$" description="Api Class" toReformat="false" toShortenFQNames="true">
+    <variable name="route" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@controller-entry" value="@entry" description="视图入口" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@controller-nodes" value="@nodes $nodes$" description="关联节点 &quot;,&quot; 分割" toReformat="false" toShortenFQNames="true">
+    <variable name="nodes" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@hook-on" value="@on $name$" description="钩子" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@model-on" value="@on $name$" description="模型事件 *|事件名" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@model-name" value="@model $name$" description="指定模型" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@request-before" value="@before" description="在请求之前" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@request-after" value="@after" description="在请求之后" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@entry" value="@entry" description="入口" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="@request" value="@request" description="api 请求" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="ttPagination" value="// $params = Arrays::simpleMerge(RequestHelp::requestData(), $params);&#10;$params = RequestHelp::requestData();&#10;$query;&#10;$pagination = new TtPagination(['totalCount' =&gt; $query-&gt;count()]);&#10;$data = [];&#10;foreach($query-&gt;offset($pagination-&gt;offset)-&gt;limit($pagination-&gt;limit)&#10;    -&gt;asArray()-&gt;each() as $item){&#10;    $data[] = $item;&#10;}&#10;&#10;return [&#10;       'total' =&gt; $pagination-&gt;totalCount,&#10;       'result' =&gt; $data&#10;];" description="扩展分页" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="@disabled" value="@disabled" description="不需要分析" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP Comment" value="true" />
+    </context>
+  </template>
+  <template name="ttFileUpload" value="if (RequestHelp::isPost()) {&#10;    if (RequestHelp::hasFile()) {&#10;        // 文件保存位置&#10;        $dir = implode('/', ['uploads/xls', Date::year($date), Date::Ym($date)]);&#10;        // 文件名&#10;        $name = Upload::one(PATH_WWW . $dir, ['ext' =&gt; 'xls']);&#10;        // todo 记录到数据库中，并返回新记录&#10;    }&#10;}" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="easyyii-view-list" value="/**&#10; * User: shutao&#10; * @var View $this&#10; */&#10;&#10;use yii\web\View;&#10;&#10;$this-&gt;title = '$title$';&#10;?&gt;&#10;&lt;div ng-controller=&quot;$name$Ctrl&quot;&gt;&#10;    &lt;div class=&quot;xblock&quot;&gt;&#10;        &lt;div class=&quot;layui-row&quot;&gt;&#10;            &lt;button class=&quot;layui-btn&quot; ng-click=&quot;toEdit(0)&quot;&gt;&#10;                &lt;i class=&quot;layui-icon&quot;&gt;&amp;#xe654;&lt;/i&gt; 添加&#10;            &lt;/button&gt;&#10;&#10;            &lt;div class=&quot;layui-inline&quot;&gt;&#10;                &lt;input class=&quot;layui-input&quot; placeholder=&quot;关键词&quot; autocomplete=&quot;off&quot; ng-model=&quot;search.keyword&quot;&gt;&#10;            &lt;/div&gt;&#10;            &lt;div class=&quot;layui-inline&quot;&gt;&#10;                &lt;button class=&quot;layui-btn&quot; lay-submit=&quot;&quot; ng-click=&quot;submit()&quot;&gt;&lt;i class=&quot;layui-icon&quot;&gt;&amp;#xe615;&lt;/i&gt;&#10;                &lt;/button&gt;&#10;            &lt;/div&gt;&#10;            &lt;span class=&quot;x-right&quot;&gt;共有数据：&lt;span ng-bind=&quot;pagination.itemsCount&quot;&gt;0&lt;/span&gt; 条&lt;/span&gt;&#10;        &lt;/div&gt;&#10;        &lt;div&gt;&lt;/div&gt;&#10;    &lt;/div&gt;&#10;&#10;    &lt;table class=&quot;layui-table&quot;&gt;&#10;        &lt;tr&gt;&#10;            &lt;th&gt;状态&lt;/th&gt;&#10;            &lt;th style=&quot;width: 130px;&quot;&gt;操作&lt;/th&gt;&#10;        &lt;/tr&gt;&#10;&#10;        &lt;tr ng-repeat=&quot;x in datas&quot;&gt;&#10;            &lt;td&gt;&#10;                &lt;button&#10;                        ng-click=&quot;toggleAttr('status', x)&quot;&#10;                        class=&quot;layui-btn layui-btn-xs&quot;&#10;                        ng-class=&quot;{'layui-btn-normal':x.status == 1, 'layui-btn-primary':x.status == 0}&quot;&#10;                        ng-bind=&quot;x.status_text&quot;&gt;&lt;/button&gt;&#10;            &lt;/td&gt;&#10;            &lt;td&gt;&#10;                &lt;button ng-click=&quot;toEdit(x,$index)&quot;&#10;                        class=&quot;layui-btn layui-btn-xs layui-btn-warm&quot;&gt;&lt;i class=&quot;layui-icon&quot;&gt;&amp;#xe642;&lt;/i&gt;&#10;                &lt;/button&gt;&#10;                &lt;button ng-click=&quot;toDelete(x,$index)&quot;&#10;                        class=&quot;layui-btn layui-btn-xs layui-btn-danger&quot;&gt;&lt;i class=&quot;layui-icon&quot;&gt;&amp;#xe640;&lt;/i&gt;&#10;                &lt;/button&gt;&#10;            &lt;/td&gt;&#10;        &lt;/tr&gt;&#10;    &lt;/table&gt;&#10;    &lt;div pagination=&quot;pagination&quot; class=&quot;pagination&quot;&gt;&lt;/div&gt;&#10;&lt;/div&gt;&#10;&lt;input name=&quot;_csrf&quot; type=&quot;hidden&quot; id=&quot;_csrf&quot; value=&quot;&lt;?= \Yii::$app-&gt;request-&gt;csrfToken ?&gt;&quot;&gt;" description="列表视图模板" toReformat="false" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="easyyii-view-edit" value="use yii\web\View;&#10;use ttext\backend\admin\services\TmpDataService;&#10;use ttcommon\base\Date;&#10;/**&#10; * @var View $this&#10; * @var $model $model$&#10; */&#10;$this-&gt;title = '编辑';&#10;?&gt;&#10;&#10;&lt;div&gt;&#10;    &lt;form class=&quot;layui-form&quot;&gt;&#10;         &lt;!-- 文本输入框 --&gt;&#10;         &lt;div class=&quot;layui-form-item&quot;&gt;&#10;            &lt;label for=&quot;title&quot; class=&quot;layui-form-label&quot;&gt;&#10;                &lt;span class=&quot;x-red&quot;&gt;*&lt;/span&gt; &lt;?php echo $model-&gt;getAttributeLabel('title') ?&gt;&#10;            &lt;/label&gt;&#10;            &lt;div class=&quot;layui-input-inline&quot;&gt;&#10;                &lt;input type=&quot;text&quot; name=&quot;title&quot; id=&quot;title&quot; required=&quot;&quot; lay-verify=&quot;required&quot;&#10;                       placeholder=&quot;&quot;&#10;                       autocomplete=&quot;off&quot; class=&quot;layui-input&quot;&gt;&#10;            &lt;/div&gt;&#10;        &lt;/div&gt;&#10;        &lt;!-- 日期指令 --&gt;&#10;        &lt;div class=&quot;layui-form-item&quot;&gt;&#10;            &lt;label for=&quot;open&quot; class=&quot;layui-form-label&quot;&gt;&#10;                &lt;?php echo $model-&gt;getAttributeLabel('open') ?&gt;&#10;            &lt;/label&gt;&#10;            &lt;div class=&quot;layui-input-inline&quot;&gt;&#10;                &lt;search-datetime value=&quot;&lt;?php echo Date::jsFormat($model-&gt;open,Date::FORMAT_YMD_HIS) ?&gt;&quot; id=&quot;open&quot;&gt;&lt;/search-datetime&gt;&#10;            &lt;/div&gt;&#10;        &lt;/div&gt;&#10;        &lt;!-- 下拉列表 --&gt;&#10;        &lt;div class=&quot;layui-form-item&quot;&gt;&#10;            &lt;label for=&quot;status&quot; class=&quot;layui-form-label&quot;&gt;&#10;                &lt;?php echo $model-&gt;getAttributeLabel('status') ?&gt;&#10;            &lt;/label&gt;&#10;            &lt;div class=&quot;layui-input-inline&quot;&gt;&#10;                &lt;select name=&quot;status&quot; id=&quot;status&quot;&gt;&#10;                    &lt;?php foreach ($model$::statusText() as $key =&gt; $text) { ?&gt;&#10;                        &lt;option value=&quot;&lt;?php echo $key ?&gt;&quot;&#10;                            &lt;?php if ($key == $model-&gt;status) {&#10;                                echo 'selected';&#10;                            } ?&gt;&#10;                        &gt;&lt;?php echo $text ?&gt;&lt;/option&gt;&#10;                    &lt;?php } ?&gt;&#10;                &lt;/select&gt;&#10;            &lt;/div&gt;&#10;        &lt;/div&gt;&#10;        &lt;!-- 文件上传指令 --&gt;&#10;        &lt;label for=&quot;tmpid&quot; class=&quot;layui-form-label&quot;&gt;&#10;            &lt;?php echo $model-&gt;getAttributeLabel('tmpid') ?&gt;&#10;        &lt;/label&gt;&#10;        &lt;div class=&quot;layui-input-block&quot;&gt;&#10;            &lt;upload-file done=&quot;save&quot;&gt;&lt;/upload-file&gt;&#10;            &lt;input type=&quot;hidden&quot; name=&quot;tmpid&quot; id=&quot;tmpid&quot; value=&quot;&lt;?php echo $model-&gt;tmpid ?&gt;&quot;&gt;&#10;            &lt;div id=&quot;preview&quot;&gt;&#10;                &lt;?php if ($model-&gt;tmpid) { ?&gt;&#10;                    &lt;div style=&quot;margin: 10px 0;&quot;&gt;&#10;                        &lt;img src=&quot;&lt;?php echo TmpDataService::data($model-&gt;tmpid, true) ?&gt;&quot; style=&quot;width: 150px&quot;/&gt;&#10;                    &lt;/div&gt;&#10;                &lt;?php } ?&gt;&#10;            &lt;/div&gt;&#10;        &lt;/div&gt;&#10;&#10;        &lt;div class=&quot;layui-form-item&quot;&gt;&#10;            &lt;label for=&quot;L_repass&quot; class=&quot;layui-form-label&quot;&gt;&lt;/label&gt;&#10;            &lt;input name=&quot;_csrf&quot; type=&quot;hidden&quot; id=&quot;_csrf&quot; value=&quot;&lt;?= \Yii::$app-&gt;request-&gt;csrfToken ?&gt;&quot;&gt;&#10;            &lt;?php if ($model-&gt;id) { ?&gt;&#10;                &lt;input type=&quot;hidden&quot; name=&quot;id&quot; value=&quot;&lt;?php echo $model-&gt;id ?&gt;&quot;&gt;&#10;            &lt;?php } ?&gt;&#10;            &lt;button class=&quot;layui-btn&quot; lay-filter='save' lay-submit=&quot;&quot;&gt;保存&lt;/button&gt;&#10;            &lt;a class=&quot;layui-btn layui-btn-primary&quot; onclick=&quot;xlayer.close(false)&quot; &gt;取消&lt;/a&gt;&#10;        &lt;/div&gt;&#10;    &lt;/form&gt;&#10;&lt;/div&gt;&#10;&#10;&#10;&lt;script&gt;&#10;    // 图片上传&#10;    function save(res) {&#10;        document.getElementById('tmpid').value = res.id;&#10;        document.getElementById('preview').innerHTML = '&lt;div style=&quot;margin: 10px 0;&quot;&gt;&lt;img src=&quot;' + res.data + '&quot; style=&quot;width: 150px&quot; /&gt;&lt;/div&gt;'&#10;    }&#10;&#10;    layui.use(['form', 'laydate', 'jquery'], function () {&#10;        var form = layui.form, laydate = layui.laydate, $ = layui.$;&#10;&#10;        //监听提交&#10;        form.on('submit(save)', function (data) {&#10;            $.ajax({&#10;                type: &quot;POST&quot;,&#10;                url: '#',&#10;                data: data.field,&#10;                success: function (response, textStatus, xhr) {&#10;                    layer.msg('成功', {icon: 6, time: 1000}, function () {&#10;                        xlayer.close(response);&#10;                    });&#10;                },&#10;                error: function (xhr, textStatus, errorThrown) {&#10;                    // 1 正确, 2 错误(X), 3 询问，4 锁定, 5 不开心, 5 开心(笑脸)&#10;                    layer.alert(textStatus + ':' + xhr.responseText, {icon: 2}, function (index) {&#10;                        layer.close(index);&#10;                    });&#10;                },&#10;                dataType: 'json'&#10;            });&#10;            return false;&#10;        });&#10;    });&#10;&lt;/script&gt;&#10;&#10;" description="编辑视图模板" toReformat="false" toShortenFQNames="true">
+    <variable name="model" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="easyyii-js-service" value="angular.module('$module$').service('$module$Service', ['httpService', function (httpService) {&#10;    return {&#10;        dataList: function (name, params) {&#10;            return httpService.get('?r=$module$/' + name.toLowerCase() + '/index&amp;api=list', params);&#10;        },&#10;    };&#10;}]);" description="服务模板" toReformat="false" toShortenFQNames="true">
+    <variable name="module" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="easyyii-js-module" value="moment.locale('zh-cn');&#10;angular.module('$name$', ['tt']);" description="ng module" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="easyyii-js-list" value="// add this file to the module.js&#10;angular.module('$module$').controller('$name$Ctrl', ['$scope', 'Pagination', 'httpService', function ($scope, Pagination, httpService) {&#10;    &#10;    var controller = '$name$'.toLowerCase();&#10;    var search = {};&#10;    $scope.search = _.assign({}, search);&#10;    &#10;    $scope.submit = function () {&#10;        $scope.search.currentPage = 1;&#10;        onLoadData({page: 0});&#10;    };&#10;    &#10;    var pagination = $scope.pagination = Pagination.create({&#10;        itemsPerPage: window.user.perPage,&#10;        maxNumbers: 5,&#10;        itemsCount: 0&#10;    });&#10;&#10;    pagination.onChange = function (page) {&#10;        onLoadData({page: page});&#10;    };&#10;    $scope.datas = [];&#10;&#10;    function onLoadData(params) {&#10;        var searchParams = _.assign({&#10;            'page': 0,&#10;            'perPage': pagination.itemsPerPage&#10;        }, params || {}, $scope.search);&#10;&#10;        httpService.get('?r=$module$/' + controller + '/index&amp;api=list',searchParams).then(function (response) {&#10;            pagination.itemsCount = response.total;&#10;            $scope.datas = response.result;&#10;        }, function (error) {&#10;            layui.use('layer',function(){&#10;                layer.alert(error, {icon: 2}, function (index) {&#10;                    layer.close(index);&#10;                });&#10;            });&#10;        })&#10;    }&#10;&#10;    onLoadData();&#10;&#10;    $scope.toEdit = function (x, index) {&#10;        if (x == 0) {&#10;            xlayer.open('添加', '?r=$module$/' + controller + '/edit', function (data) {&#10;                $scope.datas.push(data);&#10;                pagination.itemsCount++;&#10;                $scope.$apply();&#10;            });&#10;        } else {&#10;            xlayer.open('修改', '?r=$module$/' + controller + '/edit&amp;id=' + x.id, function (data) {&#10;                $scope.datas[index] = _.assign(x, data);&#10;                $scope.$apply();&#10;            });&#10;        }&#10;    };&#10;&#10;    $scope.toDelete = function (x, oindex) {&#10;        var num = parseInt(Math.random() * 100);&#10;        danger_prompt({&#10;            text: '你确定要删除吗!!&lt;br/&gt;如果你仍然确定删除，请输入:' + num&#10;        }, function (value, index, elem) {&#10;            if (num === parseInt(value)) {&#10;                $.post('?r=$module$/' + controller + '/delete&amp;id=' + x.id, _.assign({&#10;                    _csrf: $('#_csrf').val()&#10;                }), function () {&#10;                    $scope.datas.splice(oindex, 1);&#10;                    pagination.itemsCount--;&#10;                    $scope.$apply();&#10;                }, 'text');&#10;                layer.close(index);&#10;            } else {&#10;                layer.msg('填写错误,删除失败', {icon: 2, time: 1000});&#10;            }&#10;        });&#10;    };&#10;    // 切换状态&#10;    $scope.toggleAttr = function (attr, x) {&#10;        var text = attr + '_text';&#10;        $.post('?r=$module$/' + controller + '/index&amp;api=changeattrs', {&#10;            id: x.id,&#10;            attr: attr,&#10;            _csrf: $('#_csrf').val()&#10;        }, function (result) {&#10;            x[attr] = result[attr];&#10;            x[text] = result[text];&#10;            $scope.$apply();&#10;        }, 'json');&#10;    };&#10;}]);" description="列表视图模板的脚本" toReformat="false" toShortenFQNames="true">
+    <variable name="module" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="easyyii-controller" value="namespace $namespace$;&#10;&#10;use ttcommon\aop\annotation\ControllerAnnotation;&#10;use tt\common\components\TtPagination;&#10;use ttext\backend\admin\services\TmpDataService;&#10;use tt\common\help\ModelHelper;&#10;use tt\common\help\RequestHelp;&#10;use ttcommon\base\Arrays;&#10;use ttcommon\base\Data;&#10;use ttext\backend\admin\hook\QuickMenuHook;&#10;use yii\base\UserException;&#10;use yii\helpers\Inflector;&#10;/**&#10; * @title&#10; */&#10;class $Controller$ extends $BaseController$ implements ControllerAnnotation&#10;{&#10;    /**&#10;     * @title 列表&#10;     * @return string|array&#10;     * @throws&#10;     */&#10;    public function actionIndex()&#10;    {&#10;        if ($api = $this-&gt;hasApi()) {&#10;            $params = RequestHelp::requestData();&#10;            // 读取数据列表&#10;            if ('list' == $api){&#10;                $query = $model$::find()-&gt;orderBy(['id' =&gt; SORT_DESC]);&#10;                $pagination = new TtPagination(['totalCount' =&gt; $query-&gt;count()]);&#10;                $data = [];&#10;                foreach ($query-&gt;offset($pagination-&gt;offset)-&gt;limit($pagination-&gt;limit)-&gt;asArray()-&gt;each() as $item) {&#10;                    $this-&gt;addItemText($item);&#10;                    $data[] = $item;&#10;                }&#10;                return [&#10;                    'total' =&gt; $pagination-&gt;totalCount,&#10;                    'result' =&gt; $data&#10;                ];&#10;            }  elseif ('changeattrs' == $api) {&#10;                // 修改属性&#10;                Data::hasSet($params, ['id', 'attr']);&#10;                if (!in_array($params['attr'], ['status'])) { // 允许修改的属性&#10;                    throw new UserException('不被允许的属性修改');&#10;                }&#10;                $transaction = \Yii::$app-&gt;db-&gt;beginTransaction();&#10;                try {&#10;                    $model = $this-&gt;findById($params['id']);&#10;                    $model-&gt;changeAttrs($params['attr']);// todo 需要自己实现&#10;                    if ($model-&gt;update() === false) {&#10;                        throw new \Exception(ModelHelper::errorMessages($model));&#10;                    }&#10;                    $transaction-&gt;commit();&#10;                } catch (\Exception $e) {&#10;                    $transaction-&gt;rollBack();&#10;                    throw new UserException($e-&gt;getMessage());&#10;                }&#10;                $attr = $params['attr'];&#10;                return [&#10;                    $attr =&gt; $model-&gt;$attr,&#10;                    $attr . '_text' =&gt; call_user_func([$model, ucfirst(Inflector::camelize($attr))  . 'Text'], $model-&gt;$attr)&#10;                ];&#10;            } else {&#10;                throw new \Exception('api 参数错误!');&#10;            }&#10;        }&#10;        return $this-&gt;render('index');&#10;    }&#10;    &#10;    private function addItemText(&amp;$item)&#10;    {&#10;        $item['status_text'] = $model$::statusText($item['status']);&#10;        // todo 如果没有图片上传，请删除这一行&#10;        if (isset($item['tmpid']) &amp;&amp; $item['tmpid']) {&#10;            $item['src'] = TmpDataService::data($item['tmpid'],true);&#10;        }&#10;    }&#10;    /**&#10;     * @param int $id&#10;     * @throws&#10;     * @return $model$&#10;     */&#10;    private function findById($id)&#10;    {&#10;        if (!$model = $model$::findOne(['id' =&gt; $id])) {&#10;            throw new \Exception('找不到指定的数据');&#10;        }&#10;        return $model;&#10;    }&#10;&#10;    /**&#10;     * @title 添加/编辑&#10;     * @param integer $id&#10;     * @return string|array&#10;     * @throws&#10;     */&#10;    public function actionEdit($id = 0)&#10;    {&#10;        QuickMenuHook::$disabled = true;&#10;        $model = $id ? $this-&gt;findById($id) : new $model$();&#10;        if (RequestHelp::isPost()) {&#10;            $data = RequestHelp::requestData();&#10;            if ($postId = Data::hasInt($data, 'id')) {&#10;                if ($postId != $id) {&#10;                    throw new \Exception('参数错误');&#10;                }&#10;            }&#10;            // todo 如果没有文件上传，请删除这一行&#10;            if ($tmpid = Data::hasInt($data, 'tmpid')) {&#10;                TmpDataService::mustOwner($tmpid);&#10;            }&#10;            $keys = $model-&gt;scenarios()['default'];&#10;            Data::hasSet($data, $keys);&#10;            $transaction = \Yii::$app-&gt;db-&gt;beginTransaction();&#10;            &#10;            try {&#10;                $model-&gt;attributes = Arrays::values($data, $keys);&#10;                if ($model-&gt;save() === false) {&#10;                    throw new UserException(ModelHelper::errorMessages($model));&#10;                }&#10;                $transaction-&gt;commit();&#10;                $item = $model-&gt;toArray();&#10;                $this-&gt;addItemText($item);&#10;                return $item;&#10;            } catch (\Exception $e) {&#10;                $transaction-&gt;rollBack();&#10;                throw $e;&#10;            }&#10;        }&#10;        return $this-&gt;render('edit', [&#10;            'model' =&gt; $model&#10;        ]);&#10;    }&#10;    &#10;&#10;    /**&#10;     * @title 删除&#10;     * @param integer $id&#10;     * @throws&#10;     * @return string&#10;     */&#10;    public function actionDelete($id)&#10;    {&#10;        if (!RequestHelp::isPost()) {&#10;            RequestHelp::throwRequestMethodError();        &#10;        }&#10;        $model = $this-&gt;findById($id);&#10;        if ($model-&gt;delete() === false) {&#10;            throw new UserException('删除失败');&#10;        }&#10;        return '删除成功';&#10;    }&#10;}" description="控制器模板" toReformat="false" toShortenFQNames="true">
+    <variable name="namespace" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="Controller" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="BaseController" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="model" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="easyyii-changeattrs" value="public function changeAttrs($attr)&#10;{&#10;    if ($attr == 'status') {&#10;        $this-&gt;status = (int)!$this-&gt;status;&#10;    }&#10;}" description="修改状态" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="easyyii-controller-blank" value="namespace $namespace$;&#10;&#10;use ttcommon\aop\annotation\ControllerAnnotation;&#10;&#10;/**&#10; * @title $title$&#10; */&#10;class $Controller$ extends $BaseController$ implements ControllerAnnotation&#10;{&#10;    /**&#10;     * @title 列表&#10;     * @return string&#10;     * @throws&#10;     */&#10;    public function actionIndex()&#10;    {   &#10;        return $this-&gt;render('index');&#10;    }&#10;}" description="空白控制器模板" toReformat="false" toShortenFQNames="true">
+    <variable name="namespace" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="Controller" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="BaseController" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+</templateSet>

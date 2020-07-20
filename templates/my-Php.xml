@@ -1,0 +1,83 @@
+<templateSet group="my-Php">
+  <template name="singleton" value="&#10;    &#10;    private function __construct()&#10;    {&#10;&#10;    }&#10;    &#10;    /**&#10;     * @return self&#10;     */&#10;    public static function instance()&#10;    {&#10;        static $instance;&#10;        if (null === $instance) {&#10;            $instance = new static();&#10;        }&#10;        return $instance;&#10;    }&#10;&#10;    final public function __clone(){throw new \Exception('__clone');}&#10;    final public function __wakeup(){throw new \Exception('__wakeup');}" description="php 单例模式" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="__construct" value="__construct($params$){&#10;    $code$&#10;}" description="构造函数" toReformat="false" toShortenFQNames="true">
+    <variable name="params" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="php" value="&lt;?php $code$ ?&gt;" description="php tag" toReformat="false" toShortenFQNames="true">
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="php=" value="&lt;?php echo $code$ ?&gt;" description="php =" toReformat="false" toShortenFQNames="true">
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="thr" value="throw new $END$" description="throw new" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="mycurlget" value="$curl = curl_init();&#10;curl_setopt($curl, CURLOPT_URL, $uri$);&#10;curl_setopt($curl, CURLOPT_HEADER, 1);&#10;curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);&#10;$data = curl_exec($curl); // reponse data&#10;curl_close($curl);&#10;" description="curl get demo" toReformat="false" toShortenFQNames="true">
+    <variable name="uri" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="mycurl" value="$curl = curl_init();&#10;curl_setopt($curl, CURLOPT_URL, $uri$);&#10;curl_setopt($curl, CURLOPT_HEADER, 1);&#10;curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);&#10;curl_setopt($curl, CURLOPT_CUSTOMREQUEST, &quot;POST&quot;);// POST|PUT|DELETE&#10;curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($post_data$));&#10;$data = curl_exec($curl); // $data&#10;curl_close($curl);" description="curl post|put|delete" toReformat="false" toShortenFQNames="true">
+    <variable name="uri" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="post_data" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="autoload" value="spl_autoload_register(function ($class) {&#10;    include(PATH_ROOT . str_replace('\\', '/', $class) . &quot;.php&quot;);&#10;});" description="spl_autoload_register" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="phpdoc" value="$doc = &lt;&lt;&lt;EOT&#10;&#10;EOT;&#10;" description="Heredoc" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+      <option name="PHP Comment" value="false" />
+    </context>
+  </template>
+  <template name="header500" value="header('HTTP/1.1 500 Internal Server Error'); " description="header 500" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="load" value="/**&#10; * @var $load \Composer\Autoload\ClassLoader&#10; */&#10;$load = include __DIR__ . '/../vendor/autoload.php'; // 注意，不可以使用 include_once&#10;// 使用其它的命名空间 Other;&#10;// 如果发现不起作用，请检查 目录类名 是否存确&#10;$load-&gt;add('$FirstName$', [__DIR__ ]);" description="vendor autoload" toReformat="false" toShortenFQNames="true">
+    <variable name="FirstName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="php-" value="?&gt;&#10;$code$&#10;&lt;?php" description="close tag for php=" toReformat="false" toShortenFQNames="true">
+    <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="phpifelse" value="&lt;?php if ($condition$) { ?&gt;&#10;&#10;&lt;?php } else { ?&gt;&#10;&#10;&lt;?php } ?&gt;" description="php if else tag" toReformat="false" toShortenFQNames="true">
+    <variable name="condition" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>

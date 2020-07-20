@@ -1,0 +1,121 @@
+<templateSet group="Go-my">
+  <template name="forv" value="for _, v := range $1$ {&#10;    $2$&#10;}" description="range value" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="forkv" value="for i, v := range $1$ {&#10;&#10;}" description="range index, value" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="mydbsession" value="se := $engine$.NewSession()&#10;defer se.Close()&#10;_ = se.Begin()" description="事务" toReformat="false" toShortenFQNames="true">
+    <variable name="engine" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="fork" value="for i := range $1$ {&#10;    $3$&#10;}" description="range index" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="3" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="mydbstruct" value="type $name$ struct {&#10;&#9;Id        int64     `json:&quot;id&quot;`&#10;&#9;CreatedAt time.Time `json:&quot;created_at&quot; xorm:&quot;created&quot;` // 创建时间&#10;&#9;UpdatedAt time.Time `json:&quot;updated_at&quot; xorm:&quot;updated&quot;` // 更新时间&#10;&#9;DeletedAt time.Time `json:&quot;deleted_at&quot; xorm:&quot;deleted&quot;` // 删除时间&#10;}&#10;&#10;func ($name$) TableName() string {&#10;&#9;return &quot;$tableName$&quot;&#10;}&#10;" description="xorm base tag" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="tableName" expression="snakeCase(name)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_FILE" value="true" />
+    </context>
+  </template>
+  <template name="xormint" value="xorm:&quot;$FIELD_NAME$notnull default($value$)$more$&quot;$END$" description="xorm int" toReformat="false" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="0" alwaysStopAt="true" />
+    <variable name="more" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_TAG_LITERAL" value="true" />
+    </context>
+  </template>
+  <template name="xormstr" value="xorm:&quot;$FIELD_NAME$notnull default('')$more$&quot;$END$" description="xorm string" toReformat="false" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="more" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_TAG_LITERAL" value="true" />
+    </context>
+  </template>
+  <template name="empty" value="omitempty" description="omitempty" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="GO_TAG_LITERAL" value="true" />
+    </context>
+  </template>
+  <template name="binding" value="binding:&quot;required&quot;" description="binding for gin" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="GO_TAG_LITERAL" value="true" />
+    </context>
+  </template>
+  <template name="xormext" value="xorm:&quot;extends&quot;" description="扩展类" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="GO_TAG_LITERAL" value="true" />
+    </context>
+  </template>
+  <template name="mydbtimefiles" value="Id        int64     `json:&quot;id&quot;`&#10;CreatedAt time.Time `json:&quot;-&quot; xorm:&quot;created&quot;`   // CreateAt 创建时间&#10;UpdatedAt time.Time `json:&quot;-&quot; xorm:&quot;updated&quot;`   // UpdateAt 更新时间&#10;DeletedAt time.Time `json:&quot;-&quot; xorm:&quot;deleted&quot;`" description="time files" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="GO" value="true" />
+      <option name="GO_BLOCK" value="false" />
+      <option name="GO_EXPRESSION" value="false" />
+      <option name="GO_FILE" value="false" />
+      <option name="GO_STATEMENT" value="false" />
+      <option name="GO_TAG" value="false" />
+      <option name="GO_TAG_LITERAL" value="false" />
+      <option name="GO_TYPE" value="false" />
+    </context>
+  </template>
+  <template name="validate" value="validate:&quot;required&quot;" description="validate for v8" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="GO_TAG_LITERAL" value="true" />
+    </context>
+  </template>
+  <template name="formap" value="for key, val := range $1$ {&#10;    $2$&#10;}" description="range map" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="mapok" value="if e, ok := $1$; ok {&#10;    &#10;}" description="find ele in map" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="xormbool" value="xorm:&quot;$FIELD_NAME$notnull default(false)$more$&quot;$END$" description="xorm boolean" toReformat="false" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="more" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_TAG_LITERAL" value="true" />
+    </context>
+  </template>
+  <template name="mytablename" value="func ($name$) TableName() string {&#10;&#9;return &quot;$tableName$&quot;&#10;}&#10;" description="TableName" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="tableName" expression="snakeCase(name)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_FILE" value="true" />
+    </context>
+  </template>
+  <template name="deprecated" value="// Deprecated: $remark$" description="废弃" toReformat="false" toShortenFQNames="true">
+    <variable name="remark" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO" value="true" />
+    </context>
+  </template>
+  <template name="xormeach" value="if err := se.Iterate(new($model$), func(idx int, bean interface{}) error {&#10;    mo := bean.(*$model$) // mo is point, so stop add &amp; in the statement&#10;    return nil&#10;}); err != nil {&#10;    panic(err)&#10;}" description="Iterate" toReformat="false" toShortenFQNames="true">
+    <variable name="model" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

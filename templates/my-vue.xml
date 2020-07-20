@@ -1,0 +1,29 @@
+<templateSet group="my-vue">
+  <template name="clearable" value="clearable" description="vant field clearable" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="VUE_INSIDE_TAG" value="true" />
+    </context>
+  </template>
+  <template name="required" value="required" description="required" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="VUE_INSIDE_TAG" value="true" />
+    </context>
+  </template>
+  <template name="placeholder" value="placeholder=&quot;$text$&quot;" description="placeholder" toReformat="false" toShortenFQNames="true">
+    <variable name="text" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VUE_INSIDE_TAG" value="true" />
+    </context>
+  </template>
+  <template name="iivuex" value="import { mapState } from 'vuex'" description="import vuex" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="VUE_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="iivant" value="import { $vant$ } from 'vant'" description="import vant" toReformat="false" toShortenFQNames="true">
+    <variable name="vant" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VUE_SCRIPT" value="true" />
+    </context>
+  </template>
+</templateSet>

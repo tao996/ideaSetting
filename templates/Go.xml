@@ -1,0 +1,5 @@
+<templateSet group="Go">
+  <template name="con" value="const (&#10;    $name$ = iota&#10;)" description="consts" toReformat="true" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+  </template>
+</templateSet>

@@ -1,0 +1,104 @@
+<templateSet group="my-Angular">
+  <template name="iiloadsh" value="import $action$ from 'lodash/$action$';" description="import loadsh" toReformat="false" toShortenFQNames="true">
+    <variable name="action" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="TypeScript" value="true" />
+    </context>
+  </template>
+  <template name="mat-clean" value="&lt;button mat-button *ngIf=&quot;$form$.get('$name$').value&quot; matSuffix mat-icon-button&#10;      aria-label=&quot;Clear&quot; (click)=&quot;$form$.patchValue({$name$:''})&quot;&gt;&#10;    &lt;mat-icon&gt;close&lt;/mat-icon&gt;&#10;&lt;/button&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="form" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="mat-data-remove" value="onDelete(e: $type$) {&#10;    this.dialogSer.confirm().subscribe(yes =&gt; {&#10;      if (yes) {&#10;        const index = this.dataSource.data.indexOf(e);&#10;        this.dataSource.data.splice(index, 1);&#10;        this.dataSource = new MatTableDataSource(this.dataSource.data);&#10;      }&#10;    });&#10;}&#10;" description="mat dataSource modify" toReformat="false" toShortenFQNames="true">
+    <variable name="type" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="TypeScript" value="true" />
+    </context>
+  </template>
+  <template name="mat-input-date" value="&lt;mat-form-field style=&quot;width: 200px&quot;&gt;&#10;    &lt;input matInput formControlName=&quot;$name$&quot; [matDatepicker]=&quot;picker&quot; placeholder=&quot;日期&quot;&gt;&#10;    &lt;mat-datepicker #picker&gt;&lt;/mat-datepicker&gt;&#10;    &lt;mat-datepicker-toggle matSuffix [for]=&quot;picker&quot;&gt;&lt;/mat-datepicker-toggle&gt;&#10;&lt;/mat-form-field&gt;" description="日期控件" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="mat-table" value="&lt;table mat-table [dataSource]=&quot;dataSource&quot;&gt;&#10;    &lt;!-- mat-table-field --&gt;&#10;&#10;  &lt;ng-container matColumnDef=&quot;action&quot;&gt;&#10;    &lt;th mat-header-cell *matHeaderCellDef&gt;&lt;span class=&quot;pl20&quot;&gt;操作&lt;/span&gt;&lt;/th&gt;&#10;    &lt;td mat-cell *matCellDef=&quot;let e&quot;&gt;&#10;      &lt;a mat-button color=&quot;primary&quot; (click)=&quot;onEdit(e)&quot;&gt;编辑&lt;/a&gt;&#10;      &lt;a mat-button color=&quot;warn&quot; (click)=&quot;onDelete(e)&quot;&gt;删除&lt;/a&gt;&#10;    &lt;/td&gt;&#10;  &lt;/ng-container&gt;&#10;  &#10;    &lt;tr mat-header-row *matHeaderRowDef=&quot;displayedColumns&quot;&gt;&lt;/tr&gt;&#10;    &lt;tr mat-row *matRowDef=&quot;let row; columns:displayedColumns&quot;&#10;    [ngClass]=&quot;{disabled:row.status=='disabled'}&quot;&#10;    &gt;&lt;/tr&gt;&#10;&lt;/table&gt;" description="ng-material 表格" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="mat-table-datasource" value="set data(records: $dataType$[]) {&#10;    this.dataSource = new MatTableDataSource(records);&#10;}&#10;&#10;dataSource: MatTableDataSource&lt;$dataType$&gt;;&#10;total = 0;&#10;displayedColumns: string[] = [$name$]; // 列名&#10;&#10;pageChange(param: PagParam) {&#10;    this.onSearch(param);&#10;}&#10;&#10;onSearch(search: any) {&#10;    // 结果，不需要放在 ngOnInit 中&#10;}" description="表格数据源" toReformat="false" toShortenFQNames="true">
+    <variable name="dataType" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="TypeScript" value="true" />
+    </context>
+  </template>
+  <template name="mat-table-field" value=" &lt;ng-container matColumnDef=&quot;$key$&quot;&gt;&#10;    &lt;th mat-header-cell *matHeaderCellDef&gt;$label$&lt;/th&gt;&#10;    &lt;td mat-cell *matCellDef=&quot;let e&quot;&gt;{{e.$key$}}&lt;/td&gt;&#10;&lt;/ng-container&gt;" description="ng-material 列数据" toReformat="false" toShortenFQNames="true">
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="label" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="test-component" value="import {async, ComponentFixture, TestBed} from '@angular/core/testing';&#10;&#10;describe('$TestComponent$', () =&gt; {&#10;  let component: $TestComponent$;&#10;  let fixture: ComponentFixture&lt;$TestComponent$&gt;;&#10;  let element: HTMLElement; // 代表 UI 界面&#10;&#10;  beforeEach(async(() =&gt; {&#10;    TestBed.configureTestingModule({&#10;      declarations: [$TestComponent$],&#10;      imports: [],&#10;    }).compileComponents();&#10;&#10;    fixture = TestBed.createComponent($TestComponent$);&#10;    component = fixture.componentInstance;&#10;    element = fixture.nativeElement;&#10;    // 使用下面语句来获取 UI 上的组件&#10;    // const spanElement = &lt;HTMLSpanElement&gt;element.querySelector('#red');&#10;&#10;    fixture.detectChanges(); // 如果没有 provider，则注释掉&#10;  }));&#10;  &#10;  it('it should be created', () =&gt; {&#10;    expect(component).toBeTruthy();&#10;  });&#10;  // your it test&#10;});" description="1. desc component" toReformat="false" toShortenFQNames="true">
+    <variable name="TestComponent" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="TypeScript" value="true" />
+    </context>
+  </template>
+  <template name="pipedate" value="* 1000 | date:'yyyy-MM-dd hh:mm:ss z'" description="Date pipe" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JS_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="pipekv" value="keyvalue" description="map to key value" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JS_EXPRESSION" value="true" />
+    </context>
+  </template>
+  <template name="mat-data-edit" value="&#10;editRecord(item: $type$ = null) {&#10;    const dialogRef = this.dialog.open($component$, {&#10;      width: '90%',&#10;      data: item&#10;    });&#10;    dialogRef.afterClosed().subscribe(result =&gt; {&#10;      if (!result) {&#10;        return;&#10;      }&#10;    &#10;      if (item) {&#10;        const index = this.dataSource.data.indexOf(item);&#10;        this.dataSource.data[index] = result;&#10;      } else {&#10;        this.dataSource.data.push(result);&#10;      }&#10;      this.dataSource = new MatTableDataSource(this.dataSource.data);&#10;    });&#10;}" description="mat dataSource edit" toReformat="false" toShortenFQNames="true">
+    <variable name="type" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="component" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="TypeScript" value="true" />
+    </context>
+  </template>
+  <template name="ngswitch" value="&lt;div [ngSwitch]=&quot;$var$&quot;&gt;&#10;    &lt;div *ngSwitchCase=&quot;'happy'&quot;&gt;&lt;/div&gt;&#10;    &lt;div *ngSwitchDefault&gt;&lt;/div&gt;&#10;&lt;/div&gt;" description="swtich" toReformat="false" toShortenFQNames="true">
+    <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="ngpagelist" value="import {ActivatedRoute, Router} from '@angular/router';&#10;import {Component} from '@angular/core';&#10;&#10;@Component({&#10;  templateUrl: 'index.html'&#10;})&#10;export class $name$Component extends ListComponent&lt;$model$&gt; {&#10;&#10;  displayedColumns: string[] = []; // 列名&#10;&#10;  onSearch(search: any) {&#10;    this.whenSearch(this.http.get($path$ + '/search', {params:search}));&#10;  }&#10;&#10;  constructor(public router: Router,&#10;              public route: ActivatedRoute,&#10;              public dialogSer: LibDialogService,&#10;              private http: AppHttpService,&#10;  ) {&#10;    super(route, router, dialogSer);&#10;  }&#10;&#10;  goto(path: string, e: $model$) {&#10;    this.whenEdit('edit', {pid: e.pid});&#10;  }&#10;&#10;  onDelete(e: $model$) {&#10;    this.whenDelete(e, this.http.delete&lt;string&gt;($path$, httpOptionsParams({})));&#10;  }&#10;&#10;}" description="component for list page" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="model" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="path" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="TypeScript" value="true" />
+    </context>
+  </template>
+  <template name="ngpageedit" value="import {Component, OnInit} from '@angular/core';&#10;import {ActivatedRoute, Router} from '@angular/router';&#10;import {Location} from '@angular/common';&#10;import {FormBuilder, Validators} from '@angular/forms';&#10;&#10;@Component({&#10;  templateUrl: 'index.html'&#10;})&#10;export class $name$Component implements OnInit {&#10;  isUpdate = false;&#10;  m = this.fb.group({});&#10;&#10;  constructor(private router: Router,&#10;              private route: ActivatedRoute,&#10;              private location: Location,&#10;              private http: AppHttpService,&#10;              private fb: FormBuilder) {&#10;  }&#10;&#10;  ngOnInit(): void {&#10;    this.route.queryParamMap.subscribe(q =&gt; {&#10;      const $key$ = q.get('$key$') as string;&#10;      if ($key$ &amp;&amp; $key$.length &gt; 3) {&#10;        this.isUpdate = true;&#10;        this.http.get&lt;$model$&gt;($path$, {params: {$key$}}).subscribe(res =&gt; {&#10;          if (res) {&#10;            this.m.patchValue(res);&#10;          }&#10;        });&#10;      }&#10;    });&#10;  }&#10;&#10;  onSubmit() {&#10;    this.http.save&lt;string&gt;(this.isUpdate, $path$, this.m.value, httpOptionsRespText).subscribe(res =&gt; {&#10;      if (res) {&#10;        this.location.back();&#10;      }&#10;    });&#10;  }&#10;}&#10;" description="component for edit page" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="model" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="path" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="TypeScript" value="true" />
+    </context>
+  </template>
+  <template name="ngtooltip" value="#tooltip=&quot;matTooltip&quot;&#10;  matTooltip=&quot;$title$&quot;&#10;  matTooltipPosition=&quot;below&quot;" description="Ng tooltip" toReformat="false" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="inputfocus" value="#$name$ (focus)=&quot;$name$.select()&quot;" description="focus input select" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+</templateSet>
