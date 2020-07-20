@@ -112,7 +112,7 @@
       <option name="GO" value="true" />
     </context>
   </template>
-  <template name="xormeach" value="if err := se.Iterate(new($model$), func(idx int, bean interface{}) error {&#10;    mo := bean.(*$model$) // mo is point, so stop add &amp; in the statement&#10;    return nil&#10;}); err != nil {&#10;    panic(err)&#10;}" description="Iterate" toReformat="false" toShortenFQNames="true">
+  <template name="xormeach" value="if err := se.Iterate(new($model$), func(idx int, bean interface{}) error {&#10;    mo := bean.(*$model$) // mo is point, so stop add &amp; in the statement&#10;    return nil&#10;}); err != nil {&#10;    return err&#10;}" description="Iterate" toReformat="false" toShortenFQNames="true">
     <variable name="model" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="GO_STATEMENT" value="true" />
