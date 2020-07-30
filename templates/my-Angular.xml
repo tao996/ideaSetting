@@ -101,4 +101,10 @@
       <option name="HTML" value="true" />
     </context>
   </template>
+  <template name="iimoment" value="import * as _moment from 'moment';" description="import moment" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="TS_CLASS" value="true" />
+      <option name="TS_EXPRESSION" value="true" />
+    </context>
+  </template>
 </templateSet>
