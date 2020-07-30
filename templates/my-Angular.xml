@@ -95,7 +95,7 @@
       <option name="HTML" value="true" />
     </context>
   </template>
-  <template name="inputfocus" value="#$name$ (focus)=&quot;$name$.select()&quot;" description="focus input select" toReformat="false" toShortenFQNames="true">
+  <template name="inputfocus" value="#$name$ (focus)=&quot;$name$.select()&quot; style=&quot;text-align:center&quot;" description="focus input select" toReformat="false" toShortenFQNames="true">
     <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="HTML" value="true" />
