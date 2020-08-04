@@ -37,7 +37,7 @@
       <option name="TypeScript" value="true" />
     </context>
   </template>
-  <template name="mat-table-field" value=" &lt;ng-container matColumnDef=&quot;$key$&quot;&gt;&#10;    &lt;th mat-header-cell *matHeaderCellDef&gt;$label$&lt;/th&gt;&#10;    &lt;td mat-cell *matCellDef=&quot;let e&quot;&gt;&lt;div&gt;{{e.$key$}}&lt;div&gt;&lt;/td&gt;&#10;&lt;/ng-container&gt;" description="ng-material 列数据" toReformat="false" toShortenFQNames="true">
+  <template name="mat-table-field" value=" &lt;ng-container matColumnDef=&quot;$key$&quot;&gt;&#10;    &lt;th mat-header-cell *matHeaderCellDef&gt;$label$&lt;/th&gt;&#10;    &lt;td mat-cell *matCellDef=&quot;let e&quot;&gt;&lt;div&gt;{{e.$key$}}&lt;/div&gt;&lt;/td&gt;&#10;&lt;/ng-container&gt;" description="ng-material 列数据" toReformat="false" toShortenFQNames="true">
     <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="label" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
