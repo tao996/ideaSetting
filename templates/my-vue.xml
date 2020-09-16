@@ -31,7 +31,7 @@
       <option name="VUE_SCRIPT" value="true" />
     </context>
   </template>
-  <template name="v-for" value="v-for=&quot;(e, index) of $data$&quot; :key=&quot;index&quot;" description="v-for" toReformat="false" toShortenFQNames="true">
+  <template name="vfor" value="v-for=&quot;(e, index) of $data$&quot; :key=&quot;index&quot;" description="v-for=(e,index)" toReformat="false" toShortenFQNames="true">
     <variable name="data" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="VUE_INSIDE_TAG" value="true" />
