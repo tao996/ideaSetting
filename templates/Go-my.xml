@@ -32,9 +32,9 @@
       <option name="GO_FILE" value="true" />
     </context>
   </template>
-  <template name="xormint" value="xorm:&quot;$FIELD_NAME$notnull default($value$)$more$&quot;$END$" description="xorm int" toReformat="false" toShortenFQNames="true">
+  <template name="xormint" value="xorm:&quot;$FIELD_NAME$notnull default(0$value$)$more$&quot;$END$" description="xorm int" toReformat="false" toShortenFQNames="true">
     <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="value" expression="" defaultValue="0" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="more" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="GO_TAG_LITERAL" value="true" />
