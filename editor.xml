@@ -6,8 +6,7 @@
     <option name="REFORMAT_ON_PASTE" value="4" />
   </component>
   <component name="DefaultFont">
-    <option name="FONT_SIZE" value="14" />
-    <option name="FONT_FAMILY" value="Fira Code Light" />
+    <option name="FONT_SIZE" value="16" />
     <option name="LINE_SPACING" value="1.0" />
   </component>
   <component name="EditorSettings">
