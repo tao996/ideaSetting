@@ -116,7 +116,7 @@
       <option name="GO_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="xormint" value="xorm:&quot;notnull default(0$value$)$more$&quot;$END$" description="xorm int" toReformat="false" toShortenFQNames="true">
+  <template name="xormint" value="xorm:&quot;notnull default(0$value$)$more$&quot;$END$" description="xorm int/int64" toReformat="false" toShortenFQNames="true">
     <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="more" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
