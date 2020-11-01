@@ -32,10 +32,8 @@
       <option name="GO_FILE" value="true" />
     </context>
   </template>
-  <template name="xormint" value="xorm:&quot;$FIELD_NAME$int notnull default(0$value$)$more$&quot;$END$" description="xorm int" toReformat="false" toShortenFQNames="true">
+  <template name="xormintmcok" value="xorm:&quot;$FIELD_NAME$int notnull default(0)&quot;$END$" description="xorm int mock" toReformat="false" toShortenFQNames="true">
     <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="more" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="GO_TAG_LITERAL" value="true" />
     </context>
@@ -116,6 +114,13 @@
     <variable name="model" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="xormint" value="xorm:&quot;notnull default(0$value$)$more$&quot;$END$" description="xorm int" toReformat="false" toShortenFQNames="true">
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="more" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_TAG_LITERAL" value="true" />
     </context>
   </template>
 </templateSet>
