@@ -32,14 +32,14 @@
       <option name="GO_FILE" value="true" />
     </context>
   </template>
-  <template name="xormintmcok" value="xorm:&quot;$FIELD_NAME$int notnull default(0)&quot;$END$" description="xorm int mock" toReformat="false" toShortenFQNames="true">
-    <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+  <template name="xormintmcok" value="xorm:&quot;$FIELD_NAME$ int notnull default(0)&quot;$END$" description="xorm int mock" toReformat="false" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="snakeCase(fieldName())" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="GO_TAG_LITERAL" value="true" />
     </context>
   </template>
-  <template name="xormstr" value="xorm:&quot;$FIELD_NAME$notnull default('')$more$&quot;$END$" description="xorm string" toReformat="false" toShortenFQNames="true">
-    <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+  <template name="xormstr" value="xorm:&quot;$FIELD_NAME$ notnull default('')$more$&quot;$END$" description="xorm string" toReformat="true" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="snakeCase(fieldName())" defaultValue="" alwaysStopAt="true" />
     <variable name="more" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="GO_TAG_LITERAL" value="true" />
@@ -90,8 +90,8 @@
       <option name="GO_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="xormbool" value="xorm:&quot;$FIELD_NAME$notnull default(false)$more$&quot;$END$" description="xorm boolean" toReformat="false" toShortenFQNames="true">
-    <variable name="FIELD_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+  <template name="xormbool" value="xorm:&quot;$FIELD_NAME$ notnull default(false)$more$&quot;$END$" description="xorm boolean" toReformat="false" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="snakeCase(fieldName())" defaultValue="" alwaysStopAt="true" />
     <variable name="more" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="GO_TAG_LITERAL" value="true" />
@@ -116,7 +116,8 @@
       <option name="GO_STATEMENT" value="true" />
     </context>
   </template>
-  <template name="xormint" value="xorm:&quot;notnull default(0$value$)$more$&quot;$END$" description="xorm int/int64" toReformat="false" toShortenFQNames="true">
+  <template name="xormint" value="xorm:&quot;$FIELD_NAME$ notnull default(0$value$)$more$&quot;$END$" description="xorm int/int64" toReformat="false" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="snakeCase(fieldName())" defaultValue="" alwaysStopAt="true" />
     <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="more" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
