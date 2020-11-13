@@ -124,4 +124,11 @@
       <option name="GO_TAG_LITERAL" value="true" />
     </context>
   </template>
+  <template name="tt" value="{Id:$id$,Title:&quot;$title$&quot;}," description="id,title" toReformat="false" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO" value="true" />
+    </context>
+  </template>
 </templateSet>
