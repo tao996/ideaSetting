@@ -20,13 +20,13 @@
       <option name="VUE_SCRIPT" value="true" />
     </context>
   </template>
-  <template name="iivant" value="import { $vant$ } from 'vant'" description="import vant" toReformat="false" toShortenFQNames="true">
+  <template name="iivant" value="import { $vant$ } from 'vant';" description="import vant" toReformat="false" toShortenFQNames="true">
     <variable name="vant" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="VUE_SCRIPT" value="true" />
     </context>
   </template>
-  <template name="iivue" value="import Vue from 'vue'" description="import vue" toReformat="false" toShortenFQNames="true">
+  <template name="iivue" value="import Vue from 'vue';" description="import vue" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="VUE_SCRIPT" value="true" />
     </context>
@@ -38,6 +38,12 @@
     </context>
   </template>
   <template name="iivuestate" value="const $name$ = {&#10;  namespaced: true,&#10;  state: {&#10;    &#10;  },&#10;  getters: {&#10;    &#10;  },&#10;  mutations: {&#10;    &#10;  },&#10;  actions: {&#10;    &#10;  }&#10;}&#10;&#10;export default $name$" description="create state" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VUE_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="iiuse" value="Vue.use($name$);" description="vue use" toReformat="false" toShortenFQNames="true">
     <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="VUE_SCRIPT" value="true" />
