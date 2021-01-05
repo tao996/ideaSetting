@@ -402,4 +402,9 @@
       <option name="HTML" value="true" />
     </context>
   </template>
+  <template name="yiidbwhereor" value="$query-&gt;andWhere(['or',['field1'=&gt;'val1'],['field2'=&gt;'val2']])" description="or condition" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
 </templateSet>
