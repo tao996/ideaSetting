@@ -1,4 +1,4 @@
-<templateSet group="Go-fsl">
+<templateSet group="Go-gf">
   <template name="iee" value="i18n.Wrap(gerror.Wrap(err, &quot;$msg$&quot;), code$code$)" description="i18n.Wrap(gerror.Wrap" toReformat="false" toShortenFQNames="true">
     <variable name="msg" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="code" expression="" defaultValue="" alwaysStopAt="true" />

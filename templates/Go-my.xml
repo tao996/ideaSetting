@@ -32,7 +32,7 @@
       <option name="GO_FILE" value="true" />
     </context>
   </template>
-  <template name="xormintmcok" value="xorm:&quot;$FIELD_NAME$ int notnull default(0)&quot;$END$" description="xorm int mock" toReformat="false" toShortenFQNames="true">
+  <template name="xormintmock" value="xorm:&quot;$FIELD_NAME$ int notnull default(0)&quot;$END$" description="xorm int mock" toReformat="false" toShortenFQNames="true">
     <variable name="FIELD_NAME" expression="snakeCase(fieldName())" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="GO_TAG_LITERAL" value="true" />
