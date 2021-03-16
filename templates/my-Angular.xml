@@ -108,4 +108,10 @@
       <option name="TS_EXPRESSION" value="true" />
     </context>
   </template>
+  <template name="inputclear" value="&lt;a mat-icon-button matSuffix (click)=&quot;$name$=''&quot;&gt;&#10;  &lt;mat-icon&gt;clear&lt;/mat-icon&gt;&#10;&lt;/a&gt;" description="matInput icon clear button" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
 </templateSet>
