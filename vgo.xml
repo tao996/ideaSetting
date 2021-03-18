@@ -1,5 +1,19 @@
 <application>
   <component name="vgo">
+    <environment>
+      <map>
+        <entry key="GOPROXY">
+          <value>
+            <list>
+              <option value="https://goproxy.cn" />
+              <option value="https://mirrors.tencent.com/go/" />
+              <option value="https://goproxy.io" />
+              <option value="direct" />
+            </list>
+          </value>
+        </entry>
+      </map>
+    </environment>
     <proxies>
       <list>
         <option value="https://goproxy.io" />
