@@ -1,17 +1,17 @@
 <application>
   <component name="PhpInterpreters">
     <interpreters>
-      <interpreter id="acb95048-eeed-486b-9c54-90d7d40a4d75" name="PHP 7.4" home="/usr/local/Cellar/php/7.4.1/bin/php" debugger_id="php.debugger.XDebug" />
+      <interpreter id="acb95048-eeed-486b-9c54-90d7d40a4d75" name="PHP 7.4" home="/usr/local/Cellar/php@7.4/7.4.13_1/bin/php" debugger_id="php.debugger.XDebug" />
     </interpreters>
   </component>
   <component name="PhpInterpretersPhpInfoCache">
     <phpInfoCache>
       <interpreter name="PHP 7.4">
-        <phpinfo binary_type="PHP" php_cgi="/usr/local/Cellar/php/7.4.1/bin/php-cgi" php_cli="/usr/local/Cellar/php/7.4.1/bin/php" path_separator=":" version="7.4.1">
+        <phpinfo binary_type="PHP" php_cgi="/usr/local/Cellar/php@7.4/7.4.13_1/bin/php-cgi" php_cli="/usr/local/Cellar/php@7.4/7.4.13_1/bin/php" path_separator=":" version="7.4.13">
           <additional_php_ini>/usr/local/etc/php/7.4/conf.d/ext-opcache.ini</additional_php_ini>
           <configuration_file>/usr/local/etc/php/7.4/php.ini</configuration_file>
           <configuration_options>
-            <configuration_option name="include_path" value=".:/usr/local/Cellar/php/7.4.1/share/php/pear" />
+            <configuration_option name="include_path" value=".:/usr/local/Cellar/php@7.4/7.4.13_1/share/php@7.4/pear" />
           </configuration_options>
           <debuggers>
             <debugger_info debugger="xdebug" debugger_version="2.9.5">
