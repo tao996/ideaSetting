@@ -45,7 +45,7 @@
       <option name="GO_TAG_LITERAL" value="true" />
     </context>
   </template>
-  <template name="empty" value=",omitempty" description="omitempty" toReformat="false" toShortenFQNames="true">
+  <template name="empty" value="omitempty" description=",omitempty" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="GO_TAG_LITERAL" value="true" />
     </context>
