@@ -21,12 +21,13 @@
       <option name="VUE_SCRIPT" value="true" />
     </context>
   </template>
-  <template name="iivue" value="import Vue from 'vue';" description="import vue" toReformat="false" toShortenFQNames="true">
+  <template name="iivuepage" value="&lt;template&gt;&#10;  &lt;div&gt;&#10;  &lt;/div&gt;&#10;&lt;/template&gt;&#10;&#10;&lt;script lang=&quot;ts&quot;&gt;&#10;&#10;import {&#10;  computed,&#10;  defineComponent,&#10;  PropType,&#10;  reactive,&#10;  ref,&#10;} from '@vue/runtime-core'&#10;&#10;export default defineComponent({&#10;  name:'$filename$',&#10;  components: {&#10;  },&#10;  props: {},&#10;  data() {&#10;    return {}&#10;  },&#10;  computed: {},&#10;  setup(props) {&#10;       return {}&#10;  },&#10;  methods: {},&#10;  mounted() {},&#10;})&#10;/*&#10;setup watch:&#10;watch(counter, (newValue, oldValue) =&gt; {&#10;  console.log('The new counter value is: ' + counter.value)&#10;})&#10;*/&#10;&lt;/script&gt;&#10;&#10;&lt;style scoped&gt;&#10;&#10;&lt;/style&gt;&gt;&#10;" description="vue3 component" toReformat="false" toShortenFQNames="true">
+    <variable name="filename" expression="" defaultValue="lowercaseAndDash(fileNameWithoutExtension())" alwaysStopAt="true" />
     <context>
-      <option name="VUE_SCRIPT" value="true" />
+      <option name="VUE_TOP_LEVEL" value="true" />
     </context>
   </template>
-  <template name="vfor" value="v-for=&quot;(row, index) of $data$&quot; :key=&quot;index&quot;" description="v-for=(e,index)" toReformat="false" toShortenFQNames="true">
+  <template name="vforindex" value="v-for=&quot;(row, index) of $data$&quot; :key=&quot;index&quot;" description="v-for=(e,index)" toReformat="false" toShortenFQNames="true">
     <variable name="data" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="VUE_INSIDE_TAG" value="true" />
@@ -42,6 +43,12 @@
     <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="VUE_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="vfor" value="v-for=&quot;o of $data$&quot; :key=&quot;o.id&quot;" description="v-for=e" toReformat="false" toShortenFQNames="true">
+    <variable name="data" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="VUE_INSIDE_TAG" value="true" />
     </context>
   </template>
 </templateSet>
