@@ -131,4 +131,9 @@
       <option name="GO" value="true" />
     </context>
   </template>
+  <template name="xormignore" value="xorm:&quot;-&quot;$END$" description="xorm ingore" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_TAG_LITERAL" value="true" />
+    </context>
+  </template>
 </templateSet>
