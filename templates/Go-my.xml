@@ -136,4 +136,12 @@
       <option name="GO_TAG_LITERAL" value="true" />
     </context>
   </template>
+  <template name="mycc" value="func (c *$name$) $method$(r *ghttp.Request, card gfcommon.IdCard) interface{}  {&#10;&#9;$data$&#10;}" description="controller action" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="method" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="data" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_FILE" value="true" />
+    </context>
+  </template>
 </templateSet>
