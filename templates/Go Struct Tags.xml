@@ -24,4 +24,10 @@
       <option name="GO_TAG" value="true" />
     </context>
   </template>
+  <template name="jsonignore" value="json:&quot;-&quot;" description="`json:&quot;-&quot;`" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GO_TAG" value="true" />
+      <option name="GO_TAG_LITERAL" value="true" />
+    </context>
+  </template>
 </templateSet>
