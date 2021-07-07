@@ -10,7 +10,7 @@
     <mask>*.properties</mask>
     <mask>*.java</mask>
     <mask>*.toml</mask>
-    <mask>*.go</mask>
     <mask>*.mod</mask>
+    <mask>*.go</mask>
   </component>
 </application>
