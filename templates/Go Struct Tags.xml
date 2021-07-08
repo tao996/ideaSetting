@@ -11,10 +11,9 @@
       <option name="GO_TAG_LITERAL" value="true" />
     </context>
   </template>
-  <template name="jsoni" value="json:&quot;$FIELD_NAME$&quot;$END$" description="`json:&quot;忽略大小写&quot;`" toReformat="true" toShortenFQNames="true">
+  <template name="jsoni" value="json:&quot;$FIELD_NAME$&quot;$END$" description="`json:&quot;忽略大小写&quot;`" toReformat="true" toShortenFQNames="true" deactivated="true">
     <variable name="FIELD_NAME" expression="fieldName()" defaultValue="" alwaysStopAt="true" />
     <context>
-      <option name="GO_TAG" value="true" />
       <option name="GO_TAG_LITERAL" value="true" />
     </context>
   </template>
@@ -26,8 +25,28 @@
   </template>
   <template name="jsonignore" value="json:&quot;-&quot;" description="`json:&quot;-&quot;`" toReformat="true" toShortenFQNames="true">
     <context>
-      <option name="GO_TAG" value="true" />
       <option name="GO_TAG_LITERAL" value="true" />
+    </context>
+  </template>
+  <template name="xml" value="xml:&quot;$FIELD_NAME$&quot;$END$" description="`xml:&quot;&quot;`" toReformat="true" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="snakeCase(fieldName())" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_TAG" value="false" />
+      <option name="GO_TAG_LITERAL" value="true" />
+    </context>
+  </template>
+  <template name="json" value="json:&quot;$FIELD_NAME$&quot;$2$" description="`json:&quot;&quot;`" toReformat="true" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="snakeCase(fieldName())" defaultValue="" alwaysStopAt="true" />
+    <variable name="2" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_TAG" value="false" />
+      <option name="GO_TAG_LITERAL" value="true" />
+    </context>
+  </template>
+  <template name="jsonxorm--" value="`json:&quot;$FIELD_NAME$&quot; xorm:&quot;-&quot;`" description="json field xorm ignore" toReformat="true" toShortenFQNames="true">
+    <variable name="FIELD_NAME" expression="snakeCase(fieldName())" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO_TAG" value="true" />
     </context>
   </template>
 </templateSet>
