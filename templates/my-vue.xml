@@ -45,7 +45,7 @@
       <option name="VUE_SCRIPT" value="true" />
     </context>
   </template>
-  <template name="vfor" value="v-for=&quot;o of $data$&quot; :key=&quot;o.id&quot;" description="v-for=e" toReformat="false" toShortenFQNames="true">
+  <template name="vformap" value="v-for=&quot;(v, k) of $data$&quot; :key=&quot;k&quot;" description="vfor map" toReformat="false" toShortenFQNames="true">
     <variable name="data" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="VUE_INSIDE_TAG" value="true" />
