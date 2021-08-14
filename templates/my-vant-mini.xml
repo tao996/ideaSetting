@@ -1,0 +1,18 @@
+<templateSet group="my-vant-mini">
+  <template name="vant" value="&quot;van-$name$&quot;: &quot;@vant/weapp/$name$/index&quot;" description="import vant  component" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+      <option name="JSON_PROPERTY_KEYS" value="false" />
+      <option name="JSON_STRING_VALUES" value="false" />
+    </context>
+  </template>
+  <template name="van-cell" value="&lt;van-cell title=&quot;$title$&quot; value=&quot;$value$&quot; label=&quot;$label$&quot; /&gt;" description="cell 单元格" toReformat="false" toShortenFQNames="true">
+    <variable name="title" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="label" expression="enum(&quot;large&quot;,&quot;mini&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+</templateSet>

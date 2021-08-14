@@ -1,7 +1,0 @@
-<templateSet group="my-vant">
-  <template name="vanrefreshlist" value="&lt;van-pull-refresh v-model=&quot;isRefresh&quot; @refresh=&quot;onRefresh&quot;&gt;&#10;  &lt;van-list&#10;    v-model=&quot;isLoadingMore&quot;&#10;    :immediate-check=&quot;false&quot;&#10;    :finished=&quot;isFinished&quot;&#10;    finished-text=&quot;没有更多了&quot;&#10;    @load=&quot;onLoadMore&quot;&#10;  &gt;&#10;    &lt;div v-for=&quot;o in rst.rows&quot; :key=&quot;o&quot;&gt;&#10;    &lt;/div&gt;&#10;  &lt;/van-list&gt;&#10;&lt;/van-pull-refresh&gt;" description="vant refresh and list" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="VUE_TEMPLATE" value="true" />
-    </context>
-  </template>
-</templateSet>
