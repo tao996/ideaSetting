@@ -15,4 +15,22 @@
       <option name="XML_TEXT" value="true" />
     </context>
   </template>
+  <template name="van-checkbox-group" value="&lt;!-- props: name|value|disabled|max|direction --&gt;&#10;&lt;van-checkbox-group class=&quot;&quot; max=&quot;0&quot; direction=&quot;$dir$&quot;&#10;                    value=&quot;{{$value$}}&quot;&#10;                    bind:change=&quot;$event$&quot;&#10;&gt;&lt;/van-checkbox-group&gt;" description="checkbox group 复选框组" toReformat="false" toShortenFQNames="true">
+    <variable name="dir" expression="enum(&quot;vertical&quot;,&quot;horizontal&quot;)" defaultValue="vertical" alwaysStopAt="false" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="event" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="van-checkbox" value="&lt;!-- props: name|shape|value|disabled|icon-size --&gt;&#10;&lt;van-checkbox class=&quot;&quot;&#10;  wx:for=&quot;{{goods}}&quot;&#10;  wx:key=&quot;{{item.id}}&quot;&#10;  name=&quot;{{item.id}}&quot;&#10;&gt;&#10;&#10;&lt;/van-checkbox&gt;" description="checkbox 复选框" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="van-card" value="&lt;van-card&#10;  num=&quot;2&quot;&#10;  tag=&quot;标签&quot;&#10;  price=&quot;10.00&quot;&#10;  desc=&quot;描述信息&quot;&#10;  title=&quot;商品标题&quot;&#10;  thumb=&quot;{{ imageURL }}&quot; thumb-mode=&quot;aspectFit&quot;&#10;&gt;&#10;  &lt;view slot=&quot;footer&quot;&gt;&#10;    &lt;van-button size=&quot;mini&quot;&gt;按钮&lt;/van-button&gt;&#10;    &lt;van-button size=&quot;mini&quot;&gt;按钮&lt;/van-button&gt;&#10;  &lt;/view&gt;&#10;&lt;/van-card&gt;" description="card 商品卡片" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
 </templateSet>
