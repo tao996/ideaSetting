@@ -4,11 +4,9 @@
       <option name="VUE_INSIDE_TAG" value="true" />
     </context>
   </template>
-  <template name="iiprop" value="$name$: {&#10;  type: Object as PropType&lt;$class$&gt;,&#10;  required: true,&#10;}" description="vue props" toReformat="false" toShortenFQNames="true">
-    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="class" expression="" defaultValue="" alwaysStopAt="true" />
+  <template name="required" value="required" description="required" toReformat="false" toShortenFQNames="true">
     <context>
-      <option name="VUE_COMPONENT_DESCRIPTOR" value="true" />
+      <option name="VUE_INSIDE_TAG" value="true" />
     </context>
   </template>
   <template name="placeholder" value="placeholder=&quot;$text$&quot;" description="placeholder" toReformat="false" toShortenFQNames="true">
