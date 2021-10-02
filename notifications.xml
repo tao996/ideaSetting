@@ -1,0 +1,5 @@
+<application>
+  <component name="NotificationConfiguration">
+    <notification groupId="com.zxy.ijplugin.wechat_miniprogram.plugin.UpdateInfoActivity" displayType="NONE" shouldLog="false" />
+  </component>
+</application>
